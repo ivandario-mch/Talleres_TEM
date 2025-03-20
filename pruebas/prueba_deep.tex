@@ -1,0 +1,69 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+\begin{document}
+
+\textbf{Ejercicio 1.20)}
+
+\textbf{a)} Demostrar que \(\nabla(fg) = f\nabla g + g\nabla f\):
+
+\[
+\nabla(fg) = \left( \frac{\partial(fg)}{\partial x},\ \frac{\partial(fg)}{\partial y},\ \frac{\partial(fg)}{\partial z} \right)
+\]
+Aplicando la regla del producto en cada componente:
+\[
+= \left( f\frac{\partial g}{\partial x} + g\frac{\partial f}{\partial x},\ f\frac{\partial g}{\partial y} + g\frac{\partial f}{\partial y},\ f\frac{\partial g}{\partial z} + g\frac{\partial f}{\partial z} \right)
+\]
+Factorizando \(f\) y \(g\):
+\[
+= f\left( \frac{\partial g}{\partial x},\ \frac{\partial g}{\partial y},\ \frac{\partial g}{\partial z} \right) + g\left( \frac{\partial f}{\partial x},\ \frac{\partial f}{\partial y},\ \frac{\partial f}{\partial z} \right) = f\nabla g + g\nabla f
+\]
+
+\textbf{i)} Demostrar que \(\nabla \cdot (\mathbf{A} \times \mathbf{B}) = \mathbf{B} \cdot (\nabla \times \mathbf{A}) - \mathbf{A} \cdot (\nabla \times \mathbf{B})\):
+
+Sea \(\mathbf{A} = (A_x, A_y, A_z)\) y \(\mathbf{B} = (B_x, B_y, B_z)\). El producto cruz es:
+\[
+\mathbf{A} \times \mathbf{B} = \left( A_y B_z - A_z B_y,\ A_z B_x - A_x B_z,\ A_x B_y - A_y B_x \right)
+\]
+
+La divergencia se calcula como:
+\[
+\nabla \cdot (\mathbf{A} \times \mathbf{B}) = \frac{\partial}{\partial x}(A_y B_z - A_z B_y) + \frac{\partial}{\partial y}(A_z B_x - A_x B_z) + \frac{\partial}{\partial z}(A_x B_y - A_y B_x)
+\]
+
+Expandiendo las derivadas y reagrupando términos:
+\[
+= B_z \frac{\partial A_y}{\partial x} - B_y \frac{\partial A_z}{\partial x} + B_x \frac{\partial A_z}{\partial y} - B_z \frac{\partial A_x}{\partial y} + B_y \frac{\partial A_x}{\partial z} - B_x \frac{\partial A_y}{\partial z}
+\]
+
+Reconociendo los rotacionales:
+\[
+= \mathbf{B} \cdot (\nabla \times \mathbf{A}) - \mathbf{A} \cdot (\nabla \times \mathbf{B})
+\]
+
+\textbf{c)} Demostrar que \(\nabla \times (f\mathbf{A}) = f(\nabla \times \mathbf{A}) - \mathbf{A} \times (\nabla f)\):
+
+El rotacional en componentes es:
+\[
+\nabla \times (f\mathbf{A}) = 
+\begin{vmatrix}
+\mathbf{\hat{i}} & \mathbf{\hat{j}} & \mathbf{\hat{k}} \\
+\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+fA_x & fA_y & fA_z
+\end{vmatrix}
+\]
+
+Calculando las componentes:
+\[
+\mathbf{\hat{i}} \left( \frac{\partial(fA_z)}{\partial y} - \frac{\partial(fA_y)}{\partial z} \right) - \mathbf{\hat{j}} \left( \frac{\partial(fA_z)}{\partial x} - \frac{\partial(fA_x)}{\partial z} \right) + \mathbf{\hat{k}} \left( \frac{\partial(fA_y)}{\partial x} - \frac{\partial(fA_x)}{\partial y} \right)
+\]
+
+Aplicando la regla del producto en cada término:
+\[
+= f\left( \nabla \times \mathbf{A} \right) + \left( \nabla f \times \mathbf{A} \right)
+\]
+Reordenando:
+\[
+= f(\nabla \times \mathbf{A}) - \mathbf{A} \times (\nabla f)
+\]
+
+\end{document}

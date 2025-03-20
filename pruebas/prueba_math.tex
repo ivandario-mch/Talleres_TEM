@@ -1,0 +1,93 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{tikz-cd}
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[margin=2.5cm]{geometry}
+
+\begin{document}
+
+\section*{1.20}
+
+\begin{align*}
+\nabla(fg) &= f\nabla g + g \nabla f \\
+\frac{\partial}{\partial x}(fg) &= \frac{\partial f}{\partial x}g + f\frac{\partial g}{\partial x} \rightarrow \text{Lo mismo para y, z} \\
+&= f\frac{\partial g}{\partial x}\hat{i} + g\frac{\partial f}{\partial x}\hat{i} + f\frac{\partial g}{\partial y}\hat{j} + g\frac{\partial f}{\partial y}\hat{j} + f\frac{\partial g}{\partial z}\hat{k} + g\frac{\partial f}{\partial z}\hat{k} \\
+&= f\left(\frac{\partial g}{\partial x}\hat{i} + \frac{\partial g}{\partial y}\hat{j} + \frac{\partial g}{\partial z}\hat{k}\right) + g\left(\frac{\partial f}{\partial x}\hat{i} + \frac{\partial f}{\partial y}\hat{j} + \frac{\partial f}{\partial z}\hat{k}\right) \\
+&= f\nabla g + g\nabla f \quad \text{QED.}
+\end{align*}
+
+\vspace{0.5cm}
+
+
+\begin{align*}
+\nabla\cdot(A\times B) &= \frac{\partial}{\partial x}(A_yB_z - A_zB_y) + \frac{\partial}{\partial y}(A_zB_x - A_xB_z) + \frac{\partial}{\partial z}(A_xB_y - B_yA_x) \\
+&= A_y\frac{\partial B_z}{\partial x} + B_z\frac{\partial A_y}{\partial x} - \left(A_z\frac{\partial B_y}{\partial x} + B_y\frac{\partial A_z}{\partial x}\right) + A_z\frac{\partial B_x}{\partial y} + B_x\frac{\partial A_z}{\partial y} \\
+&- \left(A_x\frac{\partial B_z}{\partial y} + B_z\frac{\partial A_x}{\partial y}\right) + A_x\frac{\partial B_y}{\partial z} + B_y\frac{\partial A_x}{\partial z} - \left(A_y\frac{\partial B_x}{\partial z} + B_x\frac{\partial A_y}{\partial z}\right) \\
+&= B_z\left(\frac{\partial A_y}{\partial x} - \frac{\partial A_x}{\partial y}\right) + B_y\left(\frac{\partial A_x}{\partial z} - \frac{\partial A_z}{\partial x}\right) + B_x\left(\frac{\partial A_z}{\partial y} - \frac{\partial A_y}{\partial z}\right) \\
+&- A_z\left(\frac{\partial B_y}{\partial x} - \frac{\partial B_x}{\partial y}\right) + A_y\left(\frac{\partial B_x}{\partial z} - \frac{\partial B_z}{\partial x}\right) + A_x\left(\frac{\partial B_z}{\partial y} - \frac{\partial B_y}{\partial z}\right) \\
+&= B\cdot(\nabla\times A) - A\cdot(\nabla\times B) \quad \text{QED.}
+\end{align*}
+
+\vspace{0.5cm}
+
+
+\begin{align*}
+\nabla\times(fA) &= f(\nabla\times A) - A\times(\nabla f) \\
+&= \left(\frac{\partial fA_z}{\partial y} - \frac{\partial fA_y}{\partial z}\right)\hat{i} + \left(\frac{\partial fA_x}{\partial z} - \frac{\partial fA_z}{\partial x}\right)\hat{j} + \left(\frac{\partial fA_y}{\partial x} - \frac{\partial fA_x}{\partial y}\right)\hat{k} \\
+&= \left(f\frac{\partial A_z}{\partial y} + A_z\frac{\partial f}{\partial y} - f\frac{\partial A_y}{\partial z} - A_y\frac{\partial f}{\partial z}\right)\hat{i} + \left(f\frac{\partial A_x}{\partial z} + A_x\frac{\partial f}{\partial z} - f\frac{\partial A_z}{\partial x} - A_z\frac{\partial f}{\partial x}\right)\hat{j} \\
+&+ \left(A_y\frac{\partial f}{\partial x} + f\frac{\partial A_y}{\partial x} - A_x\frac{\partial f}{\partial y} - f\frac{\partial A_x}{\partial y}\right)\hat{k} \\
+&= f\left(\left(\frac{\partial A_z}{\partial y} - \frac{\partial A_y}{\partial z}\right)\hat{i} + \left(\frac{\partial A_x}{\partial z} - \frac{\partial A_z}{\partial x}\right)\hat{j} + \left(\frac{\partial A_y}{\partial x} - \frac{\partial A_x}{\partial y}\right)\hat{k}\right) \\
+&+ \left(\left(A_z\frac{\partial f}{\partial y} - A_y\frac{\partial f}{\partial z}\right)\hat{i} + \left(A_x\frac{\partial f}{\partial z} - A_z\frac{\partial f}{\partial x}\right)\hat{j} + \left(A_y\frac{\partial f}{\partial x} - A_x\frac{\partial f}{\partial y}\right)\hat{k}\right) \\
+&= f(\nabla\times A) - A\times(\nabla f)
+\end{align*}
+
+\end{document}
+\begin{document}
+
+\textbf{EJEMPLO}
+
+$F: \mathbb{R}^2 \to \mathbb{R}^2$
+
+$F(x,y) = (x+y,y)y$
+
+Sea $\lambda: [0,1] \to \mathbb{R}^2$,
+
+Camino: $\lambda(t) = (t,t^2)$
+
+\vspace{0.5cm}
+
+$\displaystyle\int_\lambda [F_1(x,y)dx + F_2(x,y)dy] =$
+
+\vspace{0.5cm}
+
+$\displaystyle\int_0^1 [(t+t^2)\frac{dx}{dt} + t^2\frac{dy}{dt}]dt$
+
+\vspace{0.5cm}
+
+$\frac{dx}{dt} = 1 \qquad \frac{dy}{dt} = 2t$
+
+\vspace{0.5cm}
+
+$\displaystyle\int_0^1 [(t+t^2) + (t^2)(2t)]dt$
+
+\vspace{0.5cm}
+
+$\displaystyle\int_0^1 (t + t^2 + 2t^3)dt$
+
+\vspace{0.5cm}
+
+$(\frac{t^2}{2} + \frac{t^3}{3} + \frac{2t^4}{4})\Big|_0^1$
+
+\vspace{0.5cm}
+
+$\frac{1}{2} + \frac{1}{3} + \frac{2}{4} = \frac{4}{3} \to$ valor de la función evaluada en ese punto.
+
+\end{document}

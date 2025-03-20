@@ -1,0 +1,116 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+
+\begin{document}
+
+\section*{Identidades de Cálculo Vectorial}
+
+\subsection*{(1) $\nabla(g^2)$}
+\[
+\nabla(g^2) 
+= \left( \frac{\partial}{\partial x}(g^2), \; \frac{\partial}{\partial y}(g^2), \; \frac{\partial}{\partial z}(g^2) \right).
+\]
+Usando la regla de la derivada,
+\[
+\frac{\partial}{\partial x}(g^2) 
+= 2\,g \,\frac{\partial g}{\partial x}, 
+\quad
+\frac{\partial}{\partial y}(g^2) 
+= 2\,g \,\frac{\partial g}{\partial y}, 
+\quad
+\frac{\partial}{\partial z}(g^2) 
+= 2\,g \,\frac{\partial g}{\partial z}.
+\]
+Por lo tanto,
+\[
+\nabla(g^2) 
+= 2\,g \,\nabla g.
+\]
+\[
+\text{QED.}
+\]
+
+\subsection*{(2a) $\nabla \cdot (\lambda\,\mathbf{A})$}
+Sea $\lambda$ una función escalar y $\mathbf{A} = (A_x, A_y, A_z)$ un campo vectorial. Entonces,
+\[
+\nabla \cdot (\lambda\,\mathbf{A})
+= \frac{\partial}{\partial x}(\lambda A_x)
++ \frac{\partial}{\partial y}(\lambda A_y)
++ \frac{\partial}{\partial z}(\lambda A_z).
+\]
+Aplicando la regla del producto en cada término:
+\[
+\frac{\partial}{\partial x}(\lambda A_x)
+= \frac{\partial \lambda}{\partial x}\,A_x
++ \lambda \,\frac{\partial A_x}{\partial x},
+\]
+\[
+\frac{\partial}{\partial y}(\lambda A_y)
+= \frac{\partial \lambda}{\partial y}\,A_y
++ \lambda \,\frac{\partial A_y}{\partial y},
+\]
+\[
+\frac{\partial}{\partial z}(\lambda A_z)
+= \frac{\partial \lambda}{\partial z}\,A_z
++ \lambda \,\frac{\partial A_z}{\partial z}.
+\]
+Sumando,
+\[
+\nabla \cdot (\lambda\,\mathbf{A})
+= \lambda\,(\nabla \cdot \mathbf{A})
++ \mathbf{A} \cdot (\nabla \lambda).
+\]
+\[
+\text{QED.}
+\]
+
+\subsection*{(2b) $\nabla \times (\lambda\,\mathbf{A})$}
+Para el rotacional de un producto escalar con un vector:
+\[
+\nabla \times (\lambda\,\mathbf{A})
+= \begin{vmatrix}
+\mathbf{i} & \mathbf{j} & \mathbf{k} \\[6pt]
+\displaystyle \frac{\partial}{\partial x} & \displaystyle \frac{\partial}{\partial y} & \displaystyle \frac{\partial}{\partial z} \\[6pt]
+\lambda A_x & \lambda A_y & \lambda A_z
+\end{vmatrix}.
+\]
+Nuevamente, al desarrollar se ve que cada término produce una parte con $\nabla \lambda \times \mathbf{A}$ y otra con $\lambda\,(\nabla \times \mathbf{A})$, por lo que:
+\[
+\nabla \times (\lambda\,\mathbf{A})
+= \nabla \lambda \times \mathbf{A}
++ \lambda \,\bigl(\nabla \times \mathbf{A}\bigr).
+\]
+\[
+\text{QED.}
+\]
+
+\subsection*{(3) $\nabla \cdot (\mathbf{A} \times \mathbf{B})$}
+Si $\mathbf{A} = (A_x,A_y,A_z)$ y $\mathbf{B} = (B_x,B_y,B_z)$, entonces:
+\[
+\nabla \cdot (\mathbf{A} \times \mathbf{B})
+= \mathbf{B}\cdot(\nabla \times \mathbf{A})
+- \mathbf{A}\cdot(\nabla \times \mathbf{B}).
+\]
+Esta es la conocida identidad que relaciona la divergencia de un producto cruzado con rotacionales:
+\[
+\text{QED.}
+\]
+
+\subsection*{(4) $\nabla \times (\mathbf{A} \times \mathbf{B})$}
+La identidad estándar para el rotacional de un producto cruzado es:
+\[
+\nabla \times (\mathbf{A} \times \mathbf{B})
+= (\mathbf{B} \cdot \nabla)\,\mathbf{A}
+- (\mathbf{A} \cdot \nabla)\,\mathbf{B}
++ \mathbf{A}\,(\nabla \cdot \mathbf{B})
+- \mathbf{B}\,(\nabla \cdot \mathbf{A}).
+\]
+\[
+\text{QED.}
+\]
+
+\subsection*{(5) $\nabla \times \bigl[f\,(\mathbf{A} \times \mathbf{B})\bigr]$}
+Sea $f$ un escalar y $\mathbf{A}, \mathbf{B}$ campos vectoriales.
+
+\end{document}
