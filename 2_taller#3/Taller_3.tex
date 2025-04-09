@@ -157,7 +157,7 @@ Verificación, calculando el Gradiente del potencial:
 \begin{align*}
     \nabla V & = \left(\frac{\partial V}{\partial x}, \frac{\partial V}{\partial y}, \frac{\partial V}{\partial z}\right) \\
     \nabla V & = \left(-k(y^2), -k(2xy + z^2), -k(2yz)\right) \\
-    \nabla V  & = -k\left(y^2\,\hat{\mathbf{x}} + (2xy + z^2)\,\hat{\mathbf{y}} + 2yz\,\hat{\mathbf{z}}\right) = -\mathbf{E}
+    \nabla V  & = -k\left(y^2\,\hat{\mathbf{x}} + (2xy + z^2)\,\hat{\mathbf{y}} + 2yz\,\hat{\mathbf{z}}\right) 
 \end{align*}
 
 \[
@@ -171,7 +171,7 @@ Verificación, calculando el Gradiente del potencial:
 \subsection*{Solución:}
 Para encontrar el potencial \(V\) de un campo eléctrico dado,  usamos la integral de línea del campo eléctrico sobre una trayectoria que va desde el punto \((0,0,0)\) hasta el punto \((x,y,z)\)
 \[
-\mathbf{V(s)} = -\int_{0}^{\mathbf{r}} \mathbf{E}\cdot d \mathbf{l}   
+{V(s)} = -\int_{0}^{\mathbf{r}} \mathbf{E}\cdot d \mathbf{l}   
 \]    
 
 para un alambre recto infinitamente largo, el campo eléctrico es radial y tiene la forma:
@@ -181,10 +181,10 @@ para un alambre recto infinitamente largo, el campo eléctrico es radial y tiene
 
 Reemplazando en la integral de línea, tenemos:
 \[
-    \mathbf{V(s)} = -\int_{0}^{s} \frac{\lambda}{2\pi \epsilon_0 s} ds 
+    {V(s)} = -\int_{0}^{s} \frac{\lambda}{2\pi \epsilon_0 s} ds 
 \]
 \[
-\boxed{\mathbf{V(s)} =  -\frac{\lambda}{2\pi \epsilon_0} \ln(s) }
+\boxed{{V(s)} =  -\frac{\lambda}{2\pi \epsilon_0} \ln(s) }
 \]
 
 Para comprobar el resultado, calculamos el campo eléctrico a partir del potencial:
@@ -225,19 +225,20 @@ para \( a < s < b \) tenemos:
 
 La diferencia de potencial entre un punto en el eje y un punto en el cilindro exterior es:
 \[
-\mathbf{V(a)}-\mathbf{V(b)}   = -\int_{a}^{b} \mathbf{E}\cdot d \mathbf{l}  
+{V(a)}-{V(b)}   = -\int_{a}^{b} \mathbf{E}\cdot d \mathbf{l}  
 \]
 Dado el intervalo de integración se puede separar la integral en dos partes:
 
 Desde  \(a < s < b\) y  \(0 < s <a\)
 \begin{align*}
-    \mathbf{V(0)}-\mathbf{V(b)}   &= -\int_{a}^{b} \frac{\rho a^2}{2\epsilon_o s } ds - \int_{0}^{a} \frac{\rho s}{2\epsilon_o } ds \\
+    {V(0)}-{V(b)}   &= -\int_{a}^{b} \frac{\rho a^2}{2\epsilon_o s } ds - \int_{0}^{a} \frac{\rho s}{2\epsilon_o } ds \\
     &= -\left[\frac{\rho a^2}{2\epsilon_o} \ln(s) \right]_{a}^{b} - \left[\frac{\rho s^2}{4\epsilon_o} \right]_{0}^{a} \\
     &= -\frac{\rho a^2}{2\epsilon_o} \left[\ln(b) -\ln(a)  \right] - \left[\frac{\rho a^2}{4\epsilon_o} + 0 \right] \\
     &= -\left[\frac{\rho a^2}{2\epsilon_o} \ln{\frac{b}{a} } \right] - \left[\frac{\rho a^2}{4\epsilon_o} \right] \\
     &= -\frac{\rho a^2}{2\epsilon_o} \ln{\frac{b}{a} } - \frac{\rho a^2}{4\epsilon_o}\\
-    &= -\frac{\rho a^2}{4\epsilon_o} \left(2\ln{\frac{b}{a} } + 1 \right) \\
 \end{align*}
-
+\[
+\boxed{V(0)-V(b) =-\frac{\rho a^2}{4\epsilon_o} \left(2\ln{\frac{b}{a} } + 1 \right) }
+\]
 
 \end{document}
