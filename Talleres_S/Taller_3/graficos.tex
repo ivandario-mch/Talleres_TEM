@@ -1,0 +1,80 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc} %tildes y caracteres especiales
+\usepackage[spanish]{babel} 
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{physics}
+\usepackage{xcolor}
+\usepackage{ragged2e}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{tikz-3dplot} % Permite coordenadas 3D
+
+\setlength{\parindent}{0pt}
+
+\geometry{
+  top=2.54cm,
+  bottom=2.54cm,
+  left=2.54cm,
+  right=2.54cm
+} %MARGENES APA
+
+% Estilo personalizado
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Taller No. 3-Teoría Electromagnética}
+\rfoot{ \thepage}
+\renewcommand{\footrulewidth}{0.4pt} % línea sobre pie de página (default: 0pt → invisible)
+
+\newcommand{\problema}[2]{%
+  \vspace{0.5cm}
+  {\noindent\textbf{Problema #1} #2} 
+  \noindent 
+}
+
+% Redefinir sección: texto normal, sin espacio extra
+\titleformat{\section}
+  {\normalfont}       % Estilo del título (normal, sin negrita)
+  {\thesection}       % Numeración (ej. 1, 2, 3...)
+  {1em}               % Espacio entre número y título
+  {}                  % Código antes del título (vacío)
+
+
+\begin{document}
+
+\begin{figure}[h]
+    \centering
+    \tdplotsetmaincoords{70}{120} % ángulo de vista
+
+    \begin{tikzpicture}[tdplot_main_coords, scale=3]
+
+        % Ejes coordenados
+        \draw[->] (0,0,0) -- (1.5,0,0) node[anchor=north east]{$x$};
+        \draw[->] (0,0,0) -- (0,1.5,0) node[anchor=north west]{$y$};
+        \draw[->] (0,0,0) -- (0,0,1)   node[anchor=south]{$z$};
+
+        % Coordenadas de trayectoria
+        \coordinate (a) at (1,0,0);
+        \coordinate (b) at (1,1,0);
+        \coordinate (c) at (1,1,1); % Este es el punto final
+
+        % Trayectoria en pasos
+        \draw[thick, red, ->] (0,0,0) -- (a) node[anchor=south east] {$(x_0)$} node[midway , above] {$\lambda_1$};
+        \draw[thick, blue, ->] (a) -- (b) node[anchor=south west] {$(y_0)$} node[midway , above] {$\lambda_2$};
+        \draw[thick, green, ->] (b) -- (c) node[anchor=north west] {$(z_0)$} node   [midway , right] {$\lambda_3$};
+
+        % Punto final
+        \filldraw[black] (c) circle (0.5pt);
+        \node[anchor=south] at (c) {$(x_0, y_0, z_0)$};
+
+    \end{tikzpicture}
+    \caption*{Trayectoria $(x_0, y_0, z_0)$}
+\end{figure}
+
+\end{document}

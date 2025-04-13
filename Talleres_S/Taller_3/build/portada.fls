@@ -1,0 +1,5 @@
+PWD d:\Documentos\Sanalejo\Unicauca\VIII Semestre\Teoria Electromagnetica\Taller TEM\Taller_3
+INPUT C:\Users\sanal\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
+INPUT d:\Documentos\Sanalejo\Unicauca\VIII Semestre\Teoria Electromagnetica\Taller TEM\Taller_3\portada.tex
+OUTPUT d:\Documentos\Sanalejo\Unicauca\VIII Semestre\Teoria Electromagnetica\Taller TEM\Taller_3\build\portada.log
+INPUT C:\Users\sanal\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
