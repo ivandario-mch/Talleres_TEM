@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.5)  8 APR 2025 23:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.5)  13 APR 2025 22:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -448,15 +448,6 @@ Package caption Info: End \AtBeginDocument code.
 
 (portada.tex
 
-LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <18> not available
-(Font)              size <17.28> substituted on input line 5.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <18> not available
-(Font)              size <17.28> substituted on input line 5.
-
-
-
 [1
 
 
@@ -481,7 +472,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <imagenes/problema_24.png, id=28, 761.84625pt x 367.3725pt>
 File: imagenes/problema_24.png Graphic file (type png)
 <use imagenes/problema_24.png>
-Package pdftex.def Info: imagenes/problema_24.png  used on input line 209.
+Package pdftex.def Info: imagenes/problema_24.png  used on input line 212.
 (pdftex.def)             Requested size: 241.84843pt x 116.61984pt.
 
 
@@ -492,11 +483,6 @@ Package pdftex.def Info: imagenes/problema_24.png  used on input line 209.
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-
-
-LaTeX Font Warning: Size substitutions with differences
-(Font)              up to 0.72pt have occurred.
-
  ) 
 Here is how much of TeX's memory you used:
  16087 strings out of 473523
@@ -505,9 +491,9 @@ Here is how much of TeX's memory you used:
  39045 multiletter control sequences out of 15000+600000
  565621 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,12n,87p,551b,799s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,12n,87p,550b,799s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on c:\Users\Ivan\Documents\ING_Fisica\8_Octavo\1_Teoria_electromagnetica\tallres_LaTeX\2_taller#3\build\Taller_3.pdf (6 pages, 160106 bytes).
+Output written on c:\Users\Ivan\Documents\ING_Fisica\8_Octavo\1_Teoria_electromagnetica\tallres_LaTeX\2_taller#3\build\Taller_3.pdf (6 pages, 160083 bytes).
 PDF statistics:
  82 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

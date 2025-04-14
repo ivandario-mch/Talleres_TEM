@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1744172270.13 "c:/Users/Ivan/Documents/ING_Fisica/8_Octavo/1_Teoria_electromagnetica/tallres_LaTeX/2_taller#3/Taller_3.tex" "build/Taller_3.pdf" "Taller_3" 1744172271.38211 0
+["pdflatex"] 1744600076.14524 "c:/Users/Ivan/Documents/ING_Fisica/8_Octavo/1_Teoria_electromagnetica/tallres_LaTeX/2_taller#3/Taller_3.tex" "build/Taller_3.pdf" "Taller_3" 1744600077.397 0
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1233951848 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1233951854 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -134,12 +134,12 @@
   "C:/Users/Ivan/AppData/Roaming/MiKTeX/tex/latex/geometry/geometry.cfg" 1578053545 1104 7ac475a4e3466b0b43e138e9356bda83 ""
   "C:/Users/Ivan/AppData/Roaming/MiKTeX/tex/latex/geometry/geometry.sty" 1578053545 42759 9cf6c5257b1bc7af01a58859749dd37a ""
   "C:/Users/Ivan/AppData/Roaming/MiKTeX/tex/latex/tikz-3dplot/tikz-3dplot.sty" 1326310201 32488 0c21c95f67b6fe919f5892b4d3ac7813 ""
-  "Taller_3.tex" 1744172269 9690 75c251b3082ec445293a3da869cb9788 ""
-  "build/Taller_3.aux" 1744172271 214 b2702e6ca1591335021bf2d97294aefb "pdflatex"
-  "build/portada.aux" 1744172270 541 a93ba3e2a9bd0eca44bcf370cc3edff0 "pdflatex"
-  "c:/Users/Ivan/Documents/ING_Fisica/8_Octavo/1_Teoria_electromagnetica/tallres_LaTeX/2_taller#3/Taller_3.tex" 1744172269 9690 75c251b3082ec445293a3da869cb9788 ""
+  "Taller_3.tex" 1744600074 9683 f8b653d65d000fa2241eef4a517c8a59 ""
+  "build/Taller_3.aux" 1744600077 214 a9828b9bb0d2c57c9e89f30eaccfbbb1 "pdflatex"
+  "build/portada.aux" 1744600077 541 a93ba3e2a9bd0eca44bcf370cc3edff0 "pdflatex"
+  "c:/Users/Ivan/Documents/ING_Fisica/8_Octavo/1_Teoria_electromagnetica/tallres_LaTeX/2_taller#3/Taller_3.tex" 1744600074 9683 f8b653d65d000fa2241eef4a517c8a59 ""
   "imagenes/problema_24.png" 1744165162 28641 d70ba4398873d290cf01bb7e92ddbfde ""
-  "portada.tex" 1744172043 838 ef9e46104e2c2850072a27d374bda192 ""
+  "portada.tex" 1744600074 838 2e2c0ab19a66371b0d044589f6dadcbc ""
   (generated)
   "build/Taller_3.aux"
   "build/Taller_3.log"
