@@ -1,0 +1,146 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}[12pt,a4paper,twoside,utf8,spanish]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{empheq}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{psfrag}
+\usepackage{pgfplots}
+\usepackage{bm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Other Settings
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{a4paper}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ocre}{RGB}{243,102,25}
+\definecolor{mygray}{RGB}{243,243,244}
+\definecolor{deepGreen}{RGB}{26,111,0}
+\definecolor{shallowGreen}{RGB}{235,255,255}
+\definecolor{deepBlue}{RGB}{61,124,222}
+\definecolor{shallowBlue}{RGB}{235,249,255}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\orangebox[1]{\fcolorbox{ocre}{mygray}{\hspace{1em}#1\hspace{1em}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plotting Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{width=8cm,compat=1.9}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Comandos de Vim}
+\author{H3f35T0}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-------------------------------------------------------------------------------------------------------------------------
+\begin{document}
+    \maketitle
+    Esta es una guía/Prueba de los comandos de Vim, todo esto como un modo de aprendizaje de Vim.
+    \section*{Modos de Vim}
+    \begin{enumerate}[label=(\alph*)]
+        \item \textbf{Modo normal}: Este es el modo por defecto de Vim. En este modo, se  puede navegar por el texto y ejecutar comandos. 
+        \item \textbf{Modo de inserción}: En este modo, se puede insertar texto. Para entrar en este modo, presiona la tecla \texttt{i} (insertar) o \texttt{a} (agregar). Para volver al modo normal, presiona la tecla \texttt{Esc}.
+        \item \textbf{Modo de línea de comandos}: En este modo, se pueden ejecutar comandos de Vim. Para entrar en este modo, presiona la tecla \texttt{:} (dos puntos). Para volver al modo normal, presiona la tecla \texttt{Esc}.
+    \end{enumerate}
+    \vspace{1cm}
+    \hrule
+    \vspace{1cm}
+    \begin{multicols}{2}
+    \section{Comandos de navegación}
+    \begin{itemize}
+        \item \texttt{h}: Mover el cursor a la izquierda.
+        \item \texttt{j}: Mover el cursor hacia abajo.
+        \item \texttt{k}: Mover el cursor hacia arriba.
+        \item \texttt{l}: Mover el cursor a la derecha.
+        \item \texttt{w}: Mover el cursor al inicio de la siguiente palabra.
+        \item \texttt{b}: Mover el cursor al inicio de la palabra anterior.
+        \item \texttt{0}: Mover el cursor al inicio de la línea actual.
+        \item \texttt{\$}: Mover el cursor al final de la línea actual.
+        \item \texttt{gg}: Mover el cursor al inicio del archivo.
+        \item \texttt{G}: Mover el cursor al final del archivo.
+        \item \texttt{Ctrl + f}: Desplazarse una pantalla hacia abajo.
+        \item \texttt{Ctrl + b}: Desplazarse una pantalla hacia arriba. 
+        \item \texttt{Ctrl + d}: Desplazarse media pantalla hacia abajo.
+        \item \texttt{Ctrl + u}: Desplazarse media pantalla hacia arriba.
+        \item \texttt{:n}: Ir a la línea \texttt{n}. 
+    \end{itemize}
+ %--------------------------------------------------------------------------------------------------------------------------
+    \section{Modo de edición} 
+
+    \begin{itemize}
+        \item \texttt{i}: Entrar en el modo de inserción antes del cursor.
+        \item \texttt{I}: Entrar en el modo de inserción al inicio de la línea.
+        \item \texttt{a}: Entrar en el modo de inserción después del cursor.
+        \item \texttt{A}: Entrar en el modo de inserción al final de la línea.
+        \item \texttt{o}: Crear una nueva línea debajo de la línea actual y entrar en el modo de inserción.
+        \item \texttt{O}: Crear una nueva línea encima de la línea actual y entrar en el modo de inserción.
+        \item \texttt{x}: Eliminar el carácter bajo el cursor.
+        \item \texttt{X}: Eliminar el carácter antes del cursor.
+        \item \texttt{d}: Eliminar texto.
+        \item \texttt{dw} elimina desde el cursor hasta el final de la palabra
+        \item \texttt{d\$} elimina desde el cursor hasta el final de la línea.
+        \item \texttt{dd}: Elimina la linea  entera.  
+        \item \texttt{yy}: Copiar toda la linea. 
+        \item \texttt{p}: Pegar el texto copiado o eliminado después del cursor.
+        \item \texttt{P}: Pegar el texto copiado o eliminado antes del cursor.
+        \item \texttt{u}: Deshacer el último cambio.
+        \item \texttt{ctlr +r}: Rehacer el último cambio.
+        \item \texttt{r}:Reemplazar el carácter bajo el cursor por otro carácter.
+        \item \texttt{ciw}: Eliminar la palabra y entrar en modo insertar. 
+    \end{itemize}
+    \section{Modo vista }
+    \begin{itemize}
+        \item \texttt{v}: Entrar en el modo de selección visual. Selecciona texto carácter por carácter.
+        \item \texttt{V}: Entrar en el modo de selección visual de línea. Selecciona texto línea por línea.
+        \item \texttt{Ctrl + v}: Entrar en el modo de selección visual por bloques. Selecciona texto en forma de bloque.
+        \item \texttt{y}: Copiar el texto seleccionado.
+        \item \texttt{d}: Cortar el texto seleccionado.
+        \item \texttt{c}: Cortar el texto seleccionado y entrar en el modo de inserción.
+        \item \texttt{gv}: Volver a seleccionar el último texto seleccionado
+        \item \texttt{p}: Pegar el texto copiado o eliminado después del cursor.
+        \item \texttt{P}: Pegar el texto copiado o eliminado antes del cursor.
+        \item \texttt{<}: Indentar el texto seleccionado a la izquierda.
+        \item \texttt{>}: Indentar el texto seleccionado a la derecha.
+        \item \texttt{u}: Cambiar el texto seleccionado a minúsculas.
+        \item \texttt{U}: Cambiar el texto seleccionado a mayúsculas.
+        \item \texttt{~}: Cambiar minusculas a mayúsculas y viceversa del texto seleccionado. 
+    \end{itemize}
+   \section{Modod vista bloque (crtl + v)}
+    \begin{itemize}
+        \item \texttt{I}: Entrar en el modo de inserción al inicio de la selección.
+        \item \texttt{A}: Insertar al final de la selección.
+        \item \texttt{c}: Cortar el bloque seleccionado y entrar en el modo de inserción.
+        
+    \end{itemize}
+    \end{multicols}
+
+
+         
+\end{document}
