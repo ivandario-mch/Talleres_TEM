@@ -1,0 +1,42 @@
+\ProvidesPackage{Comandos}
+\newcommand\pd[2]{\displaystyle\frac{\partial #1}{\partial #2}}
+
+% Derivada total
+\newcommand{\dd}[2]{\displaystyle\frac{d #1}{d #2}}
+
+% Segunda derivada parcial
+\newcommand{\pdd}[2]{\displaystyle\frac{\partial^2 #1}{\partial {#2}^2}}
+
+% Segunda derivada total
+\newcommand{\ddd}[2]{\displaystyle\frac{d^2 #1}{d {#2}^2}}
+
+% Integral definida
+\newcommand{\intd}[4]{\displaystyle\int_{#1}^{#2} #3 \, d#4}
+
+% Integral indefinida
+\newcommand{\inti}[2]{\displaystyle\int #1 \, d#2}
+
+% Comando para una matriz 2x2
+\newcommand{\matdos}[4]{\begin{bmatrix} #1 & #2 \\ #3 & #4 \end{bmatrix}}
+
+% Vector columna de dos elementos
+\newcommand{\vecdos}[2]{\begin{bmatrix} #1 \\ #2 \end{bmatrix}}
+
+% Vector fila de dos elementos
+\newcommand{\vecfila}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}
+
+% Notación de transpuesta
+\newcommand{\trans}{^{\mathsf{T}}}
+
+% Notación de norma
+\newcommand{\norma}[1]{\left\lVert #1 \right\rVert}
+
+% Producto escalar
+\newcommand{\pesc}[2]{\left\langle #1, #2 \right\rangle}
+
+
+% Operador gradiente, divergente y rotacional
+\newcommand{\grad}{\nabla}
+\newcommand{\divergencia}{\nabla\cdot}
+\newcommand{\rot}{\nabla\times}
+
