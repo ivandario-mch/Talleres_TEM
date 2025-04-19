@@ -3,15 +3,24 @@
 \usepackage{amsmath,amssymb}
 \usepackage{float}
 \usepackage{graphicx}
-\usepackage[a4paper, margin=2cm]{geometry}
+\usepackage[a4paper, margin=2.54cm]{geometry}
 \usepackage{enumerate}
 \usepackage{xcolor}
 \usepackage{caption}
+\usepackage{fancyhdr}
 \usepackage{tikz}
 \usepackage{tikz-3dplot} % Permite coordenadas 3D
 % Definir un comando para el número de pregunta en azul
 \newcommand{\question}[1]{\textcolor{blue}{\textbf{#1}}}
 %\usepackage[spanish]{babel}
+
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Taller No. 3-Teoría Electromagnética}
+\fancyfoot[R]{ \thepage}
+\renewcommand{\footrulewidth}{0.4pt}
+
 \begin{document}
 \include{portada}
 %---------------------------------------------Ej_20_IDMCh---------------------------------
@@ -126,12 +135,12 @@ Parametrizando  la trayectoria con respecto a un parametro \(t\)
 \[
 V(x,y,z) = -\int_0^{x_0} \mathbf{E}\cdot d \lambda_1' -\int_0^{y_o} \mathbf{E}\cdot d \lambda_2'-\int_0^{z_0} \mathbf{E}\cdot d \lambda_3'
 \]
-
+Trayectoria \(\lambda_1\): \((0,0,0) \to (x_0,0,0)\)
 \begin{align*}
     \int_0^{x_0} \mathbf{E}\cdot d \lambda_1'& =  \int_0^x k((0)^2,[2(t)(0) + 0^2],2(0)) \cdot (1,0,0)dt\\
 & = 0
 \end{align*}
-
+Trayectoria \(\lambda_2\): \((x_0,0,0) \to (x_0,y_0,0)\)
 \begin{align*}
     \int_0^{y_0} \mathbf{E}\cdot d \lambda_2'& =  \int_0^{y_0} k((t)^2,[2(x_o)(t) + 0^2],2(0)(t)) \cdot (0,1,0)dt\\
 & = \int_0^{y_0} k((t)^2,[2(x_0)(1) + 0^2],2(0)(t)) \cdot (0,1,0)dt\\
@@ -139,7 +148,7 @@ V(x,y,z) = -\int_0^{x_0} \mathbf{E}\cdot d \lambda_1' -\int_0^{y_o} \mathbf{E}\c
 & = kx_0 t^2 \bigg|_0^{y_0} \\
 & = kx_0 y_0^2
 \end{align*}
-
+Trayectoria \(\lambda_3\): \((x_0,y_0,0) \to (x_0,y_0,z_0)\) 
 \begin{align*}
     \int_0^{z_0} \mathbf{E}\cdot d \lambda_2'& =  \int_0^{z_0} k((yo)^2,[2(x_o)(y_0) + t^2],2(t)(y_0)) \cdot (0,0,1)dt\\
 & = \int_0^{z_0} k((y_0)^2,[2(x_0)(y_0) + t^2],2(t)(y_0)) \cdot (0,0,1)dt\\
@@ -158,8 +167,8 @@ En general
 
 Verificación, calculando el Gradiente del potencial:
 \begin{align*}
-    \nabla V & = \left(\frac{\partial V}{\partial x}, \frac{\partial V}{\partial y}, \frac{\partial V}{\partial z}\right) \\
-    \nabla V & = \left(-k(y^2), -k(2xy + z^2), -k(2yz)\right) \\
+    \nabla V & = \frac{\partial V}{\partial x} \hat{\mathbf{x} }\,\, \frac{\partial V}{\partial y}  \hat{\mathbf{y} }\frac{\partial V}{\partial z}  \hat{\mathbf{z} }\\
+    \nabla V & = -k(y^2)\hat{\mathbf{x} } -k(2xy + z^2)\hat{\mathbf{y} } -k(2yz)\hat{\mathbf{z} } \\
     \nabla V  & = -k\left(y^2\,\hat{\mathbf{x}} + (2xy + z^2)\,\hat{\mathbf{y}} + 2yz\,\hat{\mathbf{z}}\right) 
 \end{align*}
 
@@ -174,7 +183,7 @@ Verificación, calculando el Gradiente del potencial:
 \subsection*{Solución:}
 Para encontrar el potencial \(V\) de un campo eléctrico dado,  usamos la integral de línea del campo eléctrico sobre una trayectoria que va desde el punto \((0,0,0)\) hasta el punto \((x,y,z)\)
 \[
-{V(s)} = -\int_{0}^{\mathbf{r}} \mathbf{E}\cdot d \mathbf{l}   
+{V(s)} = -\int_{r_o}^{\mathbf{r}} \mathbf{E}\cdot d \mathbf{l}   
 \]    
 
 para un alambre recto infinitamente largo, el campo eléctrico es radial y tiene la forma:
@@ -184,10 +193,10 @@ para un alambre recto infinitamente largo, el campo eléctrico es radial y tiene
 
 Reemplazando en la integral de línea, tenemos:
 \[
-    {V(s)} = -\int_{0}^{s} \frac{\lambda}{2\pi \epsilon_0 s} ds 
+    {V(s)} = -\int_{s_o}^{s} \frac{\lambda}{2\pi \epsilon_0 s} ds 
 \]
 \[
-\boxed{{V(s)} =  -\frac{\lambda}{2\pi \epsilon_0} \ln(s) }
+\boxed{{V(s)} =  -\frac{\lambda}{2\pi \epsilon_0} \ln{\frac{s}{s_o} }}
 \]
 
 Para comprobar el resultado, calculamos el campo eléctrico a partir del potencial:
@@ -195,7 +204,7 @@ Además, dado que el sistema esta en coordenadas cilíndricas el campo eléctric
 
 \begin{align*}
     \mathbf{E}  &= -\nabla V = -\frac{\partial V}{\partial s} \hat{s} \\
-    \mathbf{E} &= -\frac{\partial}{\partial s} \left(-\frac{\lambda}{2\pi \epsilon_0} \ln(s) \right) \\
+    \mathbf{E} &= -\frac{\partial}{\partial s} \left(-\frac{\lambda}{2\pi \epsilon_0} \ln{\frac{s}{s_o} } \right) \\
     \mathbf{E} &= \frac{\lambda}{2\pi \epsilon_0} \frac{1}{s} \hat{\mathbf{s}} \\
 \end{align*}
 \[
@@ -215,32 +224,36 @@ Además, dado que el sistema esta en coordenadas cilíndricas el campo eléctric
 \end{figure}
 
 
-Del Problema 2.16 tenemos que el potencial en el interior del cilindro de radio a es:
-\[
-\mathbf{E} = \frac{\rho s}{2\epsilon_o }  \hat{s}
-\]
+Del Problema 2.16 tenemos que el campo eléctrico es:
+\begin{enumerate}[(a)]
+    \item Para \(0 < s < a\) tenemos:
+        \[
+        \mathbf{E} = \frac{\rho s}{2\epsilon_o }  \hat{s}
+        \]
+    \item  para \( a < s < b \) tenemos:
+            
+        \[
+        \mathbf{E} = \frac{\rho a^2}{2\epsilon_o s }  \hat{s}
+        \]
+\end{enumerate} 
 
-para \( a < s < b \) tenemos:
-\[
-\mathbf{E} = \frac{\rho a^2}{2\epsilon_o s }  \hat{s}
-\]
 % insertar figura del campo eléctrico
 La diferencia de potencial entre un punto en el eje y un punto en el cilindro exterior es:
 \[
-{V(a)}-{V(b)}   = -\int_{a}^{b} \mathbf{E}\cdot d \mathbf{l}  
+{V(b)}-{V(0)}   = -\int_{0}^{b} \mathbf{E}\cdot d \mathbf{l}  
 \]
 Dado el intervalo de integración se puede separar la integral en dos partes:
 
 Desde  \(a < s < b\) y  \(0 < s <a\)
 \begin{align*}
-    {V(0)}-{V(b)}   &= -\int_{a}^{b} \frac{\rho a^2}{2\epsilon_o s } ds - \int_{0}^{a} \frac{\rho s}{2\epsilon_o } ds \\
+    {V(b)}-{V(0)}   &= -\int_{a}^{b} \frac{\rho a^2}{2\epsilon_o s } ds - \int_{0}^{a} \frac{\rho s}{2\epsilon_o } ds \\
     &= -\left[\frac{\rho a^2}{2\epsilon_o} \ln(s) \right]_{a}^{b} - \left[\frac{\rho s^2}{4\epsilon_o} \right]_{0}^{a} \\
     &= -\frac{\rho a^2}{2\epsilon_o} \left[\ln(b) -\ln(a)  \right] - \left[\frac{\rho a^2}{4\epsilon_o} + 0 \right] \\
     &= -\left[\frac{\rho a^2}{2\epsilon_o} \ln{\frac{b}{a} } \right] - \left[\frac{\rho a^2}{4\epsilon_o} \right] \\
     &= -\frac{\rho a^2}{2\epsilon_o} \ln{\frac{b}{a} } - \frac{\rho a^2}{4\epsilon_o}\\
 \end{align*}
 \[
-\boxed{V(0)-V(b) =-\frac{\rho a^2}{4\epsilon_o} \left(2\ln{\frac{b}{a} } + 1 \right) }
+\boxed{V(b)-V(0) =-\frac{\rho a^2}{4\epsilon_o} \left(2\ln{\frac{b}{a} } + 1 \right) }
 \]
 
 
