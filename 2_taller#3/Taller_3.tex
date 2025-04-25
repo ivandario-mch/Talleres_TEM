@@ -8,25 +8,744 @@
 \usepackage{xcolor}
 \usepackage{caption}
 \usepackage{fancyhdr}
+\usepackage{pgfplots}
+\usepackage{enumitem}
 \usepackage{tikz}
 \usepackage{tikz-3dplot} % Permite coordenadas 3D
 % Definir un comando para el número de pregunta en azul
 \newcommand{\question}[1]{\textcolor{blue}{\textbf{#1}}}
 %\usepackage[spanish]{babel}
-
-
+\setlength{\headheight}{14.5pt} % Ajustar la altura del encabezado
+\usetikzlibrary{3d}
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{Taller No. 3-Teoría Electromagnética}
 \fancyfoot[R]{ \thepage}
 \renewcommand{\footrulewidth}{0.4pt}
+\pgfplotsset{compat=1.18}
+\def\a{3}      % valor de a en el eje s
+\def\Emax{4}   % valor máximo de |E| en s=a
+\def\b{8}      % valor de b en el eje s
+\pgfmathsetmacro{\C}{\a*\Emax}        % constante para la ley 1/x
+\pgfmathsetmacro{\ymax}{\Emax+1}      % tope del eje vertical
+\pgfmathsetmacro{\xmax}{\b+1}         % tope del eje horizontal
+
+
+
 
 \begin{document}
 \include{portada}
+% ----------------------------------------------Ej_Angie---------------------------------
+
+\section*{\question{Problema 2.2} }Encuentra el campo eléctrico (magnitud y dirección) a una distancia \( z \) por encima del punto medio entre dos cargas iguales y opuestas (\( \pm q \)), separadas una distancia \( d \).
+
+\begin{figure}[ht] 
+    \centering
+    \includegraphics[width=0.7\textwidth]{imagenes/eje2.2 (1).jpg}
+    \caption{Esquema del sistema}
+    \label{Esquema1}
+\end{figure}
+
+\subsection*{Solución:}
+Teniendo en cuenta que las componentes verticales del campo se cancelan, el campo total (Componentes en x) seria: 
+\[
+\vec{E} = \vec{E}_1x + \vec{E}_2x  
+\]
+
+\[
+{E} = 2{E}_x
+\]
+
+Se tiene el siguiente triángulo con componentes del campo eléctrico:
+
+\[
+\sin \theta = \frac{E_x}{E} \quad \Rightarrow \quad E_x = E \sin \theta
+\]
+
+Entonces, como hay dos cargas que contribuyen con campos en direcciones opuestas verticalmente (que se cancelan) y horizontalmente iguales:
+
+\[
+|E_T| = 2E \sin \theta
+\]
+
+Donde:
+
+\[
+\sin \theta = \frac{d/2}{r} = \frac{d}{2r}
+\]
+
+\[
+r = \sqrt{\left( \frac{d}{2} \right)^2 + z^2}
+\]
+
+\[
+\sin \theta = \frac{d}{2 \sqrt{\left( \frac{d}{2} \right)^2 + z^2}}
+\]
+
+El campo eléctrico de una carga puntual \( q \) es:
+
+\[
+E = \frac{1}{4\pi \varepsilon_0} \cdot \frac{q}{r^2}
+\]
+
+Entonces:
+
+\[
+E_T = 2 \cdot \frac{1}{4\pi \varepsilon_0} \cdot \frac{q}{\left( \left( \frac{d}{2} \right)^2 + z^2 \right)} \cdot \frac{d}{2 \sqrt{\left( \frac{d}{2} \right)^2 + z^2}}
+\]
+Por tanto: 
+\[
+\boxed{
+{E} = \frac{1}{4\pi\varepsilon_0} \cdot \frac{qd}{\left(z^2 + \left(\frac{d}{2}\right)^2\right)^{3/2}} \,
+}
+\]
+\[
+\boxed{
+\vec{E} = \frac{1}{4\pi\varepsilon_0} \cdot \frac{qd}{\left(z^2 + \left(\frac{d}{2}\right)^2\right)^{3/2}} \, \hat{x}
+}
+\]
+
+\section*{\question{Problema 2.4} }Encuentra el campo eléctrico a una distancia \( z \) por encima del centro de un lazo cuadrado (de lado \( a \)) que lleva una carga lineal uniforme \( \lambda \) (Figura \ref{Esquema2}).Pista: Usa el resultado del Ejercicio 2.2.
+
+\begin{figure}[ht] 
+    \centering
+    \includegraphics[width=0.3\textwidth]{imagenes/eje2.4.png} 
+    \caption{Esquema del sistema}
+    \label{Esquema2}
+\end{figure}
+
+\subsection*{Solución:}
+Resultado del Ejercicio 2.2:
+\[
+\vec{E} = \frac{1}{4\pi\varepsilon_0} \cdot \frac{2\lambda L}{z \sqrt{z^2 + L^2}} \, \hat{z}
+\]
+En este  caso, cada lado del cuadrado tiene longitud $a$, así que $L = \frac{a}{2}$. Además, la distancia desde el punto $P$ hasta el centro de un lado es:
+
+\[
+r = \sqrt{z^2 + \left(\frac{a}{2}\right)^2}
+\]
+
+Por tanto, el campo debido a un lado es:
+
+\[
+E_1 = \frac{1}{4\pi\varepsilon_0} \cdot \frac{\lambda a}{\sqrt{z^2 + \frac{a^2}{4}} \cdot \sqrt{z^2 + \frac{a^2}{2}}}
+\]
+
+Como hay cuatro lados, y por simetría solo contribuyen las componentes verticales, entonces:
+
+\[
+\vec{E} = 4 \cdot E_1 \cdot \cos\theta \cdot \hat{z}
+\]
+
+Donde: 
+\[
+\cos\theta = \frac{z}{\sqrt{z^2 + \frac{a^2}{4}}}
+\]
+
+Por tanto:
+
+
+\[
+\boxed{
+\vec{E} = \frac{1}{4\pi\varepsilon_0} \cdot \frac{4\lambda a z}{\left(z^2 + \frac{a^2}{4}\right) \sqrt{z^2 + \frac{a^2}{2}}} \, \hat{z}
+}
+\]
+
+\section*{\question{Problema 2.6} }Encuentra el campo eléctrico a una distancia \( z \) sobre el centro de un disco circular plano de radio \( R \) que tiene una densidad de carga superficial uniforme \( \sigma \). ¿Qué da la fórmula en el límite \( R \to \infty \)? También revisa el caso \( z \gg R \).
+
+\subsection*{Solución:}
+Se divide el disco en anillos concéntricos de radio \( r \) y espesor \( dr \). 
+
+\begin{figure}[ht] 
+    \centering
+    \includegraphics[width=0.5\textwidth]{imagenes/eje2.6.jpg} 
+    \caption{Esquema problema 2.6}
+    \label{Esquema3}
+\end{figure}
+
+
+La contribución al campo eléctrico en el eje \( z \), debido a esta carga \( dq \), es:
+
+\[
+d\vec{E} = \frac{1}{4\pi \varepsilon_0} \cdot \frac{dq}{r'^2} \cdot \hat{r}'
+\]
+
+La distancia desde el anillo hasta el punto sobre el eje \( z \) es:
+
+\[
+r' = \sqrt{r^2 + z^2}
+\]
+
+Solo la componente en \( z \) contribuye al campo, por simetría. Entonces:
+
+\[
+dE_z = \frac{1}{4\pi \varepsilon_0} \cdot \frac{dq}{r'^2} \cdot \cos\theta = \frac{1}{4\pi \varepsilon_0} \cdot \frac{dq}{r'^2} \cdot \frac{z}{\sqrt{r^2 + z^2}} = \frac{1}{4\pi \varepsilon_0} \cdot \frac{z \, dq}{(r^2 + z^2)^{3/2}}
+\]
+
+La carga en el anillo es:
+
+\[
+dq = \sigma \cdot dA = \sigma \cdot 2\pi r \, dr
+\]
+
+
+Se sustituye \( dq = \sigma 2\pi r \, dr \):
+
+\[
+dE_z = \frac{1}{4\pi \varepsilon_0} \cdot \frac{z \cdot \sigma \cdot 2\pi r \, dr}{(r^2 + z^2)^{3/2}} = \frac{\sigma z}{2\varepsilon_0} \cdot \frac{r \, dr}{(r^2 + z^2)^{3/2}}
+\]
+
+Para encontrar el campo eléctrico en el disco:
+\[
+\int_0^R dE_z = \int_0^R \frac{1}{4\pi\varepsilon_0} \cdot \frac{2\pi z \sigma \, r \, dr}{(z^2 + r^2)^{3/2}}
+\]
+
+\[
+E_z = \frac{2\pi z \sigma}{4\pi \varepsilon_0} \int_0^R \frac{r \, dr}{(z^2 + r^2)^{3/2}} = \frac{\sigma z}{2\varepsilon_0} \int_0^R \frac{r \, dr}{(z^2 + r^2)^{3/2}}
+\]
+
+Resolviendo la integral:
+
+\[
+I = \int_0^R \frac{r \, dr}{(z^2 + r^2)^{3/2}}
+\]
+
+Se hace el cambio de variable:
+
+\[
+r = z \tan\theta \quad \Rightarrow \quad dr = z \sec^2 \theta \, d\theta
+\]
+
+Entonces:
+
+\[
+I = \int \frac{z \tan\theta \cdot z \sec^2 \theta \, d\theta}{\left(z^2 \tan^2\theta + z^2\right)^{3/2}}
+= \int \frac{z^2 \tan\theta \sec^2 \theta \, d\theta}{z^3 (\tan^2\theta + 1)^{3/2}}
+\]
+
+\[
+= \frac{z^2}{z^3} \int \frac{\tan\theta \sec^2\theta}{\sec^3\theta} \, d\theta
+= \frac{1}{z} \int \frac{\tan\theta}{\sec\theta} \, d\theta
+= \frac{1}{z} \int \sin\theta \, d\theta
+\]
+
+\[
+= \frac{1}{z} (-\cos\theta)
+\]
+
+Volviendo a la variable original:
+
+\[
+\tan\theta = \frac{r}{z} \Rightarrow \theta = \tan^{-1}\left( \frac{r}{z} \right)
+\Rightarrow \cos\theta = \frac{z}{\sqrt{z^2 + r^2}}
+\]
+
+Entonces:
+
+\[
+I = -\frac{1}{z} \left[ \frac{z}{\sqrt{z^2 + r^2}} \right]_0^R 
+= -\frac{1}{\sqrt{z^2 + R^2}} + \frac{1}{z}
+\]
+
+Sustituyendo en la expresión para \( E_z \):
+
+\[ 
+\boxed{
+E = \frac{\sigma z}{2 \varepsilon_0} \left( \frac{1}{z} - \frac{1}{\sqrt{z^2 + R^2}} \right) \hat{z}
+}
+\]
+
+
+\subsection*{ Cuando \( R \to \infty \) }
+
+Cuando \( R \to \infty \), la raíz \( \sqrt{z^2 + R^2}  \to \infty  \), así que:
+
+\[
+\frac{1}{\sqrt{z^2 + R^2}} \to 0
+\]
+
+Entonces el campo se vuelve:
+
+\[
+E = \frac{\sigma z}{2 \varepsilon_0} \left( \frac{1}{z} - 0 \right) 
+\]
+\[
+\boxed {
+E =\frac{\sigma}{2\varepsilon_0} \hat{z}
+}
+\]
+
+
+
+\subsection*{Cuando \( z \gg R \) }
+
+Cuando estamos muy lejos del disco, es decir, \( z \gg R \), podemos hacer una expansión de Taylor:
+
+\[
+\sqrt{z^2 + R^2} \approx z \left(1 + \frac{R^2}{2z^2}\right)
+\Rightarrow \frac{1}{\sqrt{z^2 + R^2}} \approx \frac{1}{z} \left(1 - \frac{R^2}{2z^2}\right)
+\]
+
+Entonces el campo se aproxima a:
+
+\[
+E \approx \frac{\sigma z}{2 \varepsilon_0} \left( \frac{1}{z} - \frac{1}{z} \left(1 - \frac{R^2}{2z^2} \right) \right)
+= \frac{\sigma z}{2 \varepsilon_0} \left( \frac{R^2}{2z^3} \right)
+\]
+\[ 
+\boxed{
+E = \frac{\sigma R^2}{4\varepsilon_0 z^2}
+}
+\]
+
+
+
+%----------------------------------------------Ej_Angie----------------------------------
+%----------------------------------------------Ej_Elizabeth---------------------------------
+
+
+\section*{\question{ Problema 2.8}}  
+
+Usando el resultado del Problema 2.7, se desea encontrar el campo eléctrico dentro y fuera de una esfera sólida de radio \( R \), que posee una densidad de carga volumétrica uniforme \( \rho \). Expresa la solución en términos de la carga total \( q \) y dibuja una gráfica cualitativa del valor absoluto del campo eléctrico \( |\vec{E}| \) en función de la distancia desde el centro.
+
+\vspace{0.3cm}
+La carga total de la esfera se puede expresar como:
+\[
+q = \rho \cdot \frac{4}{3} \pi R^3
+\]
+
+\subsection*{Solución:}
+
+\subsection*{Campo eléctrico dentro de la esfera \((r < R)\)}
+
+Ahora bien. aplicamos la ley de Gauss tomando una superficie esférica de radio \( r < R \). La carga encerrada dentro de esta superficie es:
+\[
+q_{\text{int}} = \rho \cdot \frac{4}{3} \pi r^3
+\]
+
+La ley de Gauss nos queda que:
+\[
+E(r) \cdot 4\pi r^2 = \frac{q_{\text{int}}}{\varepsilon_0} = \frac{\rho \cdot \frac{4}{3} \pi r^3}{\varepsilon_0}
+\]
+
+Resolviendo para \( E(r) \):
+\[
+E(r) = \frac{\rho}{3 \varepsilon_0} r
+\]
+
+Sustituyendo \( \rho \) en términos de \( q \):
+\[
+\rho = \frac{3q}{4\pi R^3} \quad \Rightarrow \quad E(r) = \frac{q}{4\pi \varepsilon_0 R^3} r
+\]
+
+\subsection*{Campo eléctrico fuera de la esfera \((r \geq R)\)}
+
+En este caso, toda la carga \( q \) está encerrada por la superficie gaussiana, por lo tanto:
+
+\[
+E(r) \cdot 4\pi r^2 = \frac{q}{\varepsilon_0}
+\quad \Rightarrow \quad
+E(r) = \frac{1}{4\pi \varepsilon_0} \cdot \frac{q}{r^2}
+\]
+
+A continuacion se obtiene la grafica;
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            axis lines = left,
+            xlabel = $r$,
+            ylabel = $|\vec{E}(r)|$,
+            ymin=0, ymax=1.2,
+            xmin=0, xmax=2.5,
+            xtick={1},
+            xticklabels={$R$},
+            domain=0:2.5,
+            samples=200,
+            smooth,
+            thick,
+            width=0.8\textwidth,
+            height=0.4\textwidth,
+            legend style={at={(0.98,0.95)},anchor=north east}
+        ]
+        % Campo dentro de la esfera: E = k*r (hasta r=1)
+        \addplot[blue, domain=0:1] {x};
+        % Campo fuera de la esfera: E = 1/x^2 (desde r=1 en adelante)
+        \addplot[red, domain=1:2.5] {1/x^2};
+
+        \legend{Dentro de la esfera,Fuera de la esfera}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Gráfica cualitativa de \( |\vec{E}(r)| \) vs. \( r \). Se normalizó el valor máximo en \( r = R \).}
+\end{figure}
+La gráfica de \( |\vec{E}(r)| \) como función de la distancia desde el centro de una esfera cargada uniformemente muestra un comportamiento característico de los campos generados por distribuciones esféricas de carga. En el interior de la esfera (\( r < R \)), el campo eléctrico crece linealmente con la distancia al centro, lo que refleja que solo la carga encerrada dentro del radio \( r \) contribuye al campo en ese punto (según la ley de Gauss). En cambio, fuera de la esfera (\( r > R \)), el campo disminuye con el cuadrado de la distancia, comportándose como si toda la carga estuviera concentrada en un punto en el centro de la esfera. Este resultado es consistente con el campo de un punto cargado, confirmando la simetría y naturaleza del campo eléctrico en distribuciones esféricas uniformes.
+
+\section*{\question{Problema 2.10}}
+
+Una carga puntual \( q \) se encuentra en la esquina trasera de un cubo, como se muestra en la Figura \ref{fig:figura2.17}. Se desea encontrar el flujo del campo eléctrico \( \vec{E} \) a través de la cara sombreada del cubo.
+
+
+\begin{figure}[ht]
+    \begin{center}
+\begin{tikzpicture}[scale=3, line join=round]
+
+  % Draw cube edges
+  \draw[thick] (0,0,0) -- (1,0,0) -- (1,1,0) -- (0,1,0) -- cycle; % bottom square
+  \draw[thick] (0,0,1) -- (1,0,1) -- (1,1,1) -- (0,1,1) -- cycle; % top square
+  \draw[thick] (0,0,0) -- (0,0,1);
+  \draw[thick] (1,0,0) -- (1,0,1);
+  \draw[thick] (1,1,0) -- (1,1,1);
+  \draw[thick] (0,1,0) -- (0,1,1);
+
+  % Shade the desired face
+  \fill[gray!50,opacity=0.7] (1,0,0) -- (1,1,0) -- (1,1,1) -- (1,0,1) -- cycle;
+
+  % Place charge qabove
+  \filldraw[black] (0,0,0) circle (0.7pt) node[above left] {$q$};
+
+\end{tikzpicture}
+\end{center}
+    \label{fig:figura2.17}
+\caption{Esquema de la carga ubicada la esquina del Cubo.}
+\end{figure}
+
+
+\bigskip
+\subsection*{Solución:}
+
+Según la Ley de Gauss, el flujo eléctrico total a través de una superficie cerrada que encierra completamente una carga \( q \) es:
+
+\[
+\Phi_E = \frac{q}{\varepsilon_0}
+\]
+
+En este caso, la carga se encuentra ubicada en una esquina del cubo. En tres dimensiones, una esquina de un cubo es compartida por ocho cubos idénticos. Por lo tanto, la carga \( q \) se distribuiría entre ocho cubos si quisiéramos encerrar completamente la carga.
+
+\[
+\Phi_{\text{cubo}} = \frac{q}{8\varepsilon_0}
+\]
+
+Ahora bien, este flujo se distribuye entre las tres caras del cubo que están orientadas hacia afuera desde la esquina opuesta a la carga (ya que las tres caras adyacentes a la carga no reciben flujo saliente). Debido a la simetría del cubo, estas tres caras reciben cantidades iguales de flujo. Entonces, el flujo a través de una de estas caras (incluyendo la sombreada en la figura) es:
+
+\[
+\boxed{\Phi = \frac{q}{24\varepsilon_0}}
+\]
+
+\section*{\question{ Problema 2.12}} 
+ Utiliza la Ley de Gauss para encontrar el campo eléctrico dentro de una esfera sólida uniformemente cargada con densidad de carga \( \rho \). Compara tu respuesta con el Problema 2.8.
+
+
+\subsection*{Solución}
+
+Usamos la Ley de Gauss para encontrar el campo eléctrico dentro de una esfera cargada de radio \( R \), con densidad de carga volumétrica constante \( \rho \). Consideramos una \textbf{superficie gaussiana} esférica de radio \( r < R \), concéntrica con la esfera cargada.
+
+\subsection*{Ley de Gauss}
+
+La Ley de Gauss establece:
+
+\[
+\oint \vec{E} \cdot d\vec{A} = \frac{q_{\text{int}}}{\varepsilon_0}
+\]
+
+Por simetría, el campo eléctrico es radial y de magnitud constante sobre la superficie gaussiana. Entonces:
+
+\[
+E(r) \cdot 4\pi r^2 = \frac{q_{\text{int}}}{\varepsilon_0}
+\]
+
+La carga encerrada dentro de la superficie gaussiana de radio \( r \) es:
+
+\[
+q_{\text{int}} = \rho \cdot \frac{4}{3} \pi r^3
+\]
+
+Sustituyendo en la ecuación de Gauss:
+
+\[
+E(r) \cdot 4\pi r^2 = \frac{\rho \cdot \frac{4}{3} \pi r^3}{\varepsilon_0}
+\]
+
+\[
+E(r) = \frac{\rho r}{3 \varepsilon_0}
+\]
+
+Finalmente el campo eléctrico dentro de una esfera sólidamente cargada con densidad \( \rho \) es:
+
+\[
+\boxed{E(r) = \frac{\rho r}{3 \varepsilon_0}, \quad \text{para } r < R}
+\]
+
+\subsubsection*{Comparación }
+
+En el interior de la esfera el campo crece linealmente con \( r \), mientras que fuera de la esfera decrece como \( 1/r^2 \), tal como se obtuvo en el problema 2.8.
+
+
+%----------------------------------------------Ej_Elizabeth---------------------------------
+%----------------------------------------------Ej_Michel---------------------------------
+
+
+\section*{\textcolor{blue}{Problema 2.14}}
+
+Encuentra el campo eléctrico dentro de una esfera que tiene una densidad de carga que es proporcional a la distancia desde el origen \(\rho = kr\), para alguna constante k.
+\textit{[Pista: Esta densidad de carga no es uniforme, y debes integrar para obtener la carga encerrada.]}
+
+
+\section*{Solución}
+
+Usando la Ley de Gauss \[\oint_S \vec{E} \cdot d\vec{a} = \frac{Q_{\text{enc}}}{\varepsilon_0}
+\]
+\[
+\textbf{E}(4\pi r^2) = \frac{Q_{\text{enc}}}{\varepsilon_0}
+\]
+La carga encerrada por la superficie gaussiana es:
+\[
+Q_{\text{enc}} = \int_V \rho \, dV \quad 
+\]
+\[
+\text{siendo} \quad dV = r'^2 \sin\theta \, dr' \, d\theta \, d\phi
+\quad \text{y} \quad \rho(r) = \kappa r'
+\]
+
+\[
+Q_{\text{enc}} = \int_0^{2\pi} \int_0^{\pi} \int_0^r (\kappa r') \cdot (r'^2 \sin\theta \, dr' \, d\theta \, d\phi )
+= \kappa \int_0^{2\pi} d\phi \int_0^{\pi} \sin\theta \, d\theta \int_0^r r'^3 \, dr'
+\]
+
+\[
+= \kappa (2\pi)(-\cos\theta)\Big|_0^{\pi} \cdot \frac{r'^4}{4} \Big|_0^{r}
+= \frac{4\pi \kappa r^4}{4}
+\]
+
+\[
+Q_{\text{enc}} = \pi \kappa r^4
+\]
+Finalmente, reemplazando en la expresión del campo eléctrico
+\[
+\textbf{E}  
+= \frac{Q_{\text{enc}}}{(4\pi r^2)\varepsilon_0} 
+= \frac{\pi \kappa r^4}{4\pi r^2 \varepsilon_0}
+= \frac{\kappa r^2}{4\varepsilon_0} \, \hat{r}
+\]
+
+\[
+\boxed{\textbf{E} = \frac{\kappa r^2}{4\varepsilon_0} \, \hat{r}}
+\]
+
+
+\section*{\textcolor{blue}{Problema 2.16}}
+
+
+Un cable coaxial largo (Fig.\ref{fig:figura226}) tiene una densidad de carga volumétrica uniforme \(\rho \) en el cilindro interior (radio a), y una densidad de carga superficial uniforme sobre el cilindro exterior (radio b). Esta carga superficial es negativa y tiene justo la magnitud adecuada para que el cable en su totalidad sea eléctricamente neutro.
+Encuentra el campo eléctrico en cada una de las tres regiones:
+
+\begin{enumerate}[label=(\roman*)]
+    \item Dentro del cilindro interior \((s < a)\),
+    \item Entre los cilindros \((a < s < b)\),
+    \item Fuera del cable \((s > b)\).
+\end{enumerate}
+Grafica \( |E| \) como función de \( s \).
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.5\linewidth]{imagenes/5_IMG.png}
+    \caption{Esquema del cable coaxial.}
+    \label{fig:figura226}
+\end{figure}
+
+\section*{Solución}
+
+\subsection*{(i) Dentro del cilindro interior \((s < a)\),}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.75\linewidth]{imagenes/(i).png}
+    \caption{Superficie gaussiana \((s < a)\)}
+    \label{fig:26_1}
+\end{figure}
+
+Aplicando la Ley de Gauss
+\[
+\oint_S \vec{E} \cdot d\vec{a} = \frac{Q_{\text{enc}}}{\varepsilon_0}
+\]
+
+\[
+\textbf{E}(2\pi s \ell) = \frac{Q_{\text{enc}}}{\varepsilon_0}
+\]
+La carga encerrada por la superficie gaussiana es:
+\[
+Q_{\text{enc}} = \int_V \rho \, dV \quad \text{donde} \quad dV = s'  ds'  d\phi  dz
+\]
+
+\[
+Q_{\text{enc}} = \rho \int_0^{l} dz \int_0^{2\pi} d\phi \int_0^s s' \, ds'
+= \rho \ell (2\pi) \left[ \frac{s'^2}{2} \right]_0^s
+\]
+
+\[
+Q_{\text{enc}} = \pi \rho s^2 \ell
+\]
+Finalmente, reemplazando en la expresión del campo eléctrico
+\[
+\textbf{E}= \frac{\pi \rho s^2 \ell}{ \varepsilon_0} \cdot \frac{1}{2\pi s \ell}
+\]
+
+\[
+\boxed{\quad 
+\textbf{E} =  \frac{\rho s}{2\varepsilon_0} \, \hat{s}
+}\]
+
+\subsection*{(ii) Campo eléctrico entre los cilindros \( a < s < b \)}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.75\linewidth]{imagenes/(ii).png}
+    \caption*{Superficie gaussiana \( a < s < b \)}
+    \label{fig:enter-label}
+\end{figure}
+
+Aplicando la Ley de Gauss
+\[
+\oint_S \vec{E} \cdot d\vec{a} = \frac{Q_{\text{enc}}}{\varepsilon_0}
+\]
+\[
+\textbf{E} (2\pi s \ell) = \frac{Q_{\text{enc}}}{\varepsilon_0}
+\]
+La carga encerrada por la superficie gaussiana es:
+\[
+Q_{\text{enc}} = \int_V \rho \, dV \quad \text{con} \quad dV = r \, dr d\phi dz 
+\]
+
+\[
+Q_{\text{enc}} = \rho \int_0^{\ell} dz \int_0^{2\pi} d\phi \int_0^a r \, dr 
+= \rho \cdot \ell \cdot (2\pi) \left[ \frac{r^2}{2} \right]_0^a 
+\]
+\[
+Q_{\text{enc}} = \pi \rho \ell a^2
+\]
+Finalmente, reemplazando en la expresión del campo eléctrico
+\[
+\textbf{E} = \frac{1}{\varepsilon_0} \cdot \frac{(\pi \rho \ell a^2)}{(2\pi s \ell)} 
+= \frac{1}{\varepsilon_0} \cdot \frac{\rho a^2}{2s} 
+\quad 
+\]
+
+\[
+\boxed{\quad 
+\textbf{E} = \frac{\rho a^2}{2\varepsilon_0 s} \, \hat{s}
+}\]
+
+\subsection*{(iii) Fuera del cable \( s > b \)}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.75\linewidth]{imagenes/(iii).png}
+    \caption*{Superficie gaussiana \(  s > b \)}
+    \label{fig:enter-label}
+\end{figure}
+
+\[
+\oint_S \vec{E} \cdot d\vec{a} = \frac{Q_{\text{enc}}}{\varepsilon_0}
+\]
+
+\[
+\textbf{E} (2\pi s \ell) = \frac{Q_{\text{enc}}}{\varepsilon_0}\quad
+\]
+El campo fuera del cable es nulo, ya que el sistema es neutro y la simetría asegura que los campos de las cargas opuestas se cancelan fuera del cable.
+\[
+\boxed{\textbf{E} = 0}
+\]
+
+\subsubsection*{Gráfica \( |E| \) como función de \( s \).}
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}[>=latex, thick]
+    % Ejes
+    \draw[->] (0,0) -- (\xmax,0) node[right] {$s$};
+    \draw[->] (0,0) -- (0,\ymax) node[above] {$|E|$};
+
+    % Coordenadas clave
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (\a,\Emax);
+    % Punto B = (b, C/b) calculado automáticamente
+    \coordinate (B) at (\b,{ \C/\b });
+
+    % Fase 1: ascendente lineal (azul)
+    \draw[blue] (O) -- (A);
+
+    % Fase 2: decrecimiento 1/x (rojo)
+    \draw[red,domain=\a:\b,variable=\x,samples=100]
+      plot (\x,{ \C/\x });
+
+    % Fase 3: colapso vertical (verde)
+    \draw[green!60!black] (B) -- (\b,0);
+
+    % Líneas auxiliares y etiquetas
+    \draw[dashed] (A) -- (\a,0) node[below] {$a$};
+    \node[below] at (\b,0) {$b$};
+  \end{tikzpicture}
+  \caption{Gráfica esquemática de \(|E|\) vs.\ \(s\).}
+  \label{fig:EvsS}
+\end{figure}
+
+
+\section*{\textcolor{blue}{Problema 2.18}}
+Dos esferas, cada una de radio R y que llevan densidades de carga volumétrica uniformes \(+ \rho\)  y \( -\rho\), respectivamente, se colocan de forma que se superponen parcialmente (Fig. \ref{fig:figura2.28}).
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.4\linewidth]{imagenes/6_IMG.png}
+    \caption{Esquema del problema 2.18}
+    \label{fig:figura2.28}
+\end{figure}
+
+Llama al vector desde el centro positivo hacia el centro negativo d.
+Demuestra que el campo en la región de superposición es constante, y encuentra su valor.
+\textit{[Pista: Usa la respuesta del Problema 2.12.]}
+\section*{Solución}
+Del Problema 2.12 tenemos que el campo eléctrico dentro de una esfera sólida uniformemente cargada es:
+
+\[
+\textbf{E(r)}= \frac{\rho}{3 \varepsilon_0} \hat{r} \quad \text{para } \quad r < R
+\]
+El campo de la esfera positiva y negativa:
+\[
+\textbf{E}_+ = \frac{+\rho}{3 \varepsilon_0} \textbf{r}_+, \qquad
+\textbf{E}_- = \frac{-\rho}{3 \varepsilon_0} \textbf{r}_-
+\]
+Entonces, el campo total es:
+
+\[
+\textbf{E}_{\text{total}} = \textbf{E}_+ + \textbf{E}_- 
+= \frac{\rho}{3 \varepsilon_0} \textbf{r}_+ + \frac{-\rho}{3 \varepsilon_0} \textbf{r}_-
+= \frac{\rho}{3 \varepsilon_0} (\textbf{r}_+ - \textbf{r}_-)
+\]
+
+\[
+\text{Pero } (\textbf{r}_+ - \textbf{r}_-) = \textbf{d}
+\]
+
+\begin{minipage}{0.25\textwidth}
+    \includegraphics[width=\linewidth]{imagenes/4_IMG.png}
+    \label{fig:}
+\end{minipage}
+\hfill
+\begin{minipage}{0.6\textwidth}
+    Siendo \textbf{d} vector desde el centro de la positiva al centro de la negativa como se muestra en el gráfico.
+\end{minipage}
+
+Finalmente, el campo eléctrico total es
+\[
+\boxed{\textbf{E} = \frac{\rho}{3 \varepsilon_0} \textbf{d}}
+\]
+
+
+
+%----------------------------------------------Ej_Michel---------------------------------
 %---------------------------------------------Ej_20_IDMCh---------------------------------
 \section*{\question{ Problema 2.20}} Uno de estos es un campo electrostático imposible. ¿Cuál?
 
-\begin{enumerate}[(a)]
+\begin{enumerate}[label=(\alph*)]
     \item  \(\mathbf{E} = k[xy \mathbf{ \hat{x}}+ 2yz\mathbf{ \hat{y}}+ 3zx\mathbf{ \hat{z}}] \)
     \item \(\mathbf{E} = k[y^2\mathbf{ \hat{x}}+ (2xy + z^2)\mathbf{ \hat{y}}+ 2zx\mathbf{ \hat{z}}] \)
 \end{enumerate}
@@ -91,7 +810,7 @@ ky^2 & k(2xy + z^2) & 2kyz
 \subsection*{Cálculo del potencial para (b)}
 Integrando a lo largo de la trayectoria \((0,0,0) \to (x,0,0) \to (x,y,0) \to (x,y,z)\):
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \tdplotsetmaincoords{70}{120} % ángulo de vista
 
@@ -167,9 +886,9 @@ En general
 
 Verificación, calculando el Gradiente del potencial:
 \begin{align*}
-    \nabla V & = \frac{\partial V}{\partial x} \hat{\mathbf{x} }\,\, \frac{\partial V}{\partial y}  \hat{\mathbf{y} }\frac{\partial V}{\partial z}  \hat{\mathbf{z} }\\
-    \nabla V & = -k(y^2)\hat{\mathbf{x} } -k(2xy + z^2)\hat{\mathbf{y} } -k(2yz)\hat{\mathbf{z} } \\
-    \nabla V  & = -k\left(y^2\,\hat{\mathbf{x}} + (2xy + z^2)\,\hat{\mathbf{y}} + 2yz\,\hat{\mathbf{z}}\right) 
+    \mathbf{ \nabla}V & = \frac{\partial V}{\partial x} \hat{\mathbf{x} } + \frac{\partial V}{\partial y}  \hat{\mathbf{y} } + \frac{\partial V}{\partial z}  \hat{\mathbf{z} }\\
+    \mathbf{ \nabla }V & = -k(y^2)\hat{\mathbf{x} } -k(2xy + z^2)\hat{\mathbf{y} } -k(2yz)\hat{\mathbf{z} } \\
+    \mathbf{ \nabla }V  & = -k\left(y^2\,\hat{\mathbf{x}} + (2xy + z^2)\,\hat{\mathbf{y}} + 2yz\,\hat{\mathbf{z}}\right) 
 \end{align*}
 
 \[
@@ -219,13 +938,12 @@ Además, dado que el sistema esta en coordenadas cilíndricas el campo eléctric
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{imagenes/problema_24.png}
-    \pagenumbering{gobble} % Desactiva la numeración de páginas
     \caption*{\label{fig:problema_24}Configuración del problema 2.16}
 \end{figure}
 
 
 Del Problema 2.16 tenemos que el campo eléctrico es:
-\begin{enumerate}[(a)]
+\begin{enumerate}[label=(\roman*)]
     \item Para \(0 < s < a\) tenemos:
         \[
         \mathbf{E} = \frac{\rho s}{2\epsilon_o }  \hat{s}
@@ -255,9 +973,4 @@ Desde  \(a < s < b\) y  \(0 < s <a\)
 \[
 \boxed{V(b)-V(0) =-\frac{\rho a^2}{4\epsilon_o} \left(2\ln{\frac{b}{a} } + 1 \right) }
 \]
-
-
-
-
-
 \end{document}
