@@ -49,7 +49,7 @@
 \subsection*{Solución:}
 Teniendo en cuenta que las componentes verticales del campo se cancelan, el campo total (Componentes en x) seria: 
 \[
-\vec{E} = \vec{E}_1x + \vec{E}_2x  
+\mathbf{E} = \mathbf{E}_1x + \mathbf{E}_2x  
 \]
 
 \[
@@ -101,23 +101,23 @@ Por tanto:
 \]
 \[
 \boxed{
-\vec{E} = \frac{1}{4\pi\varepsilon_0} \cdot \frac{qd}{\left(z^2 + \left(\frac{d}{2}\right)^2\right)^{3/2}} \, \hat{x}
+\mathbf{E} = \frac{1}{4\pi\varepsilon_0} \cdot \frac{qd}{\left(z^2 + \left(\frac{d}{2}\right)^2\right)^{3/2}} \, \hat{x}
 }
 \]
 
-\section*{\question{Problema 2.4} }Encuentra el campo eléctrico a una distancia \( z \) por encima del centro de un lazo cuadrado (de lado \( a \)) que lleva una carga lineal uniforme \( \lambda \) (Figura \ref{Esquema2}).Pista: Usa el resultado del Ejercicio 2.2.
+\section*{\question{Problema 2.4} }Encuentra el campo eléctrico a una distancia \( z \) por encima del centro de un lazo cuadrado (de lado \( a \)) que lleva una carga lineal uniforme \( \lambda \) (Figura \ref{figura2}).Pista: Usa el resultado del Ejercicio 2.2.
 
 \begin{figure}[ht] 
     \centering
     \includegraphics[width=0.3\textwidth]{imagenes/eje2.4.png} 
     \caption{Esquema del sistema}
-    \label{Esquema2}
+    \label{figura2}
 \end{figure}
 
 \subsection*{Solución:}
 Resultado del Ejercicio 2.2:
 \[
-\vec{E} = \frac{1}{4\pi\varepsilon_0} \cdot \frac{2\lambda L}{z \sqrt{z^2 + L^2}} \, \hat{z}
+ \mathbf{E} = \frac{1}{4\pi\varepsilon_0} \cdot \frac{2\lambda L}{z \sqrt{z^2 + L^2}} \, \hat{z}
 \]
 En este  caso, cada lado del cuadrado tiene longitud $a$, así que $L = \frac{a}{2}$. Además, la distancia desde el punto $P$ hasta el centro de un lado es:
 
@@ -134,7 +134,7 @@ E_1 = \frac{1}{4\pi\varepsilon_0} \cdot \frac{\lambda a}{\sqrt{z^2 + \frac{a^2}{
 Como hay cuatro lados, y por simetría solo contribuyen las componentes verticales, entonces:
 
 \[
-\vec{E} = 4 \cdot E_1 \cdot \cos\theta \cdot \hat{z}
+\mathbf{E} = 4 \cdot E_1 \cdot \cos\theta \cdot \hat{z}
 \]
 
 Donde: 
@@ -147,7 +147,7 @@ Por tanto:
 
 \[
 \boxed{
-\vec{E} = \frac{1}{4\pi\varepsilon_0} \cdot \frac{4\lambda a z}{\left(z^2 + \frac{a^2}{4}\right) \sqrt{z^2 + \frac{a^2}{2}}} \, \hat{z}
+\mathbf{E} = \frac{1}{4\pi\varepsilon_0} \cdot \frac{4\lambda a z}{\left(z^2 + \frac{a^2}{4}\right) \sqrt{z^2 + \frac{a^2}{2}}} \, \hat{z}
 }
 \]
 
@@ -167,7 +167,7 @@ Se divide el disco en anillos concéntricos de radio \( r \) y espesor \( dr \).
 La contribución al campo eléctrico en el eje \( z \), debido a esta carga \( dq \), es:
 
 \[
-d\vec{E} = \frac{1}{4\pi \varepsilon_0} \cdot \frac{dq}{r'^2} \cdot \hat{r}'
+d\mathbf{E} = \frac{1}{4\pi \varepsilon_0} \cdot \frac{dq}{r'^2} \cdot \hat{r}'
 \]
 
 La distancia desde el anillo hasta el punto sobre el eje \( z \) es:
@@ -251,7 +251,7 @@ Sustituyendo en la expresión para \( E_z \):
 
 \[ 
 \boxed{
-E = \frac{\sigma z}{2 \varepsilon_0} \left( \frac{1}{z} - \frac{1}{\sqrt{z^2 + R^2}} \right) \hat{z}
+\mathbf{E}  = \frac{\sigma z}{2 \varepsilon_0} \left( \frac{1}{z} - \frac{1}{\sqrt{z^2 + R^2}} \right) \hat{z}
 }
 \]
 
@@ -271,7 +271,7 @@ E = \frac{\sigma z}{2 \varepsilon_0} \left( \frac{1}{z} - 0 \right)
 \]
 \[
 \boxed {
-E =\frac{\sigma}{2\varepsilon_0} \hat{z}
+\mathbf{E}  =\frac{\sigma}{2\varepsilon_0} \hat{z}
 }
 \]
 
@@ -294,7 +294,7 @@ E \approx \frac{\sigma z}{2 \varepsilon_0} \left( \frac{1}{z} - \frac{1}{z} \lef
 \]
 \[ 
 \boxed{
-E = \frac{\sigma R^2}{4\varepsilon_0 z^2}
+\mathbf{E}  = \frac{\sigma R^2}{4\varepsilon_0 z^2}\, \hat{z}
 }
 \]
 
@@ -306,7 +306,7 @@ E = \frac{\sigma R^2}{4\varepsilon_0 z^2}
 
 \section*{\question{ Problema 2.8}}  
 
-Usando el resultado del Problema 2.7, se desea encontrar el campo eléctrico dentro y fuera de una esfera sólida de radio \( R \), que posee una densidad de carga volumétrica uniforme \( \rho \). Expresa la solución en términos de la carga total \( q \) y dibuja una gráfica cualitativa del valor absoluto del campo eléctrico \( |\vec{E}| \) en función de la distancia desde el centro.
+Usando el resultado del Problema 2.7, se desea encontrar el campo eléctrico dentro y fuera de una esfera sólida de radio \( R \), que posee una densidad de carga volumétrica uniforme \( \rho \). Expresa la solución en términos de la carga total \( q \) y dibuja una gráfica cualitativa del valor absoluto del campo eléctrico \( |\mathbf{E}| \) en función de la distancia desde el centro.
 
 \vspace{0.3cm}
 La carga total de la esfera se puede expresar como:
@@ -323,7 +323,7 @@ Ahora bien. aplicamos la ley de Gauss tomando una superficie esférica de radio 
 q_{\text{int}} = \rho \cdot \frac{4}{3} \pi r^3
 \]
 
-La ley de Gauss nos queda que:
+Aplicando la ley de Gauss tenemos que:
 \[
 E(r) \cdot 4\pi r^2 = \frac{q_{\text{int}}}{\varepsilon_0} = \frac{\rho \cdot \frac{4}{3} \pi r^3}{\varepsilon_0}
 \]
@@ -348,14 +348,14 @@ E(r) \cdot 4\pi r^2 = \frac{q}{\varepsilon_0}
 E(r) = \frac{1}{4\pi \varepsilon_0} \cdot \frac{q}{r^2}
 \]
 
-A continuacion se obtiene la grafica;
+A continuación se obtiene la grafica;
 \begin{figure}[H]
     \centering
     \begin{tikzpicture}
         \begin{axis}[
             axis lines = left,
             xlabel = $r$,
-            ylabel = $|\vec{E}(r)|$,
+            ylabel = $|\mathbf{E}(r)|$,
             ymin=0, ymax=1.2,
             xmin=0, xmax=2.5,
             xtick={1},
@@ -376,13 +376,13 @@ A continuacion se obtiene la grafica;
         \legend{Dentro de la esfera,Fuera de la esfera}
         \end{axis}
     \end{tikzpicture}
-    \caption{Gráfica cualitativa de \( |\vec{E}(r)| \) vs. \( r \). Se normalizó el valor máximo en \( r = R \).}
+    \caption{Gráfica cualitativa de \( |\mathbf{E}(r)| \) vs. \( r \). Se normalizó el valor máximo en \( r = R \).}
 \end{figure}
-La gráfica de \( |\vec{E}(r)| \) como función de la distancia desde el centro de una esfera cargada uniformemente muestra un comportamiento característico de los campos generados por distribuciones esféricas de carga. En el interior de la esfera (\( r < R \)), el campo eléctrico crece linealmente con la distancia al centro, lo que refleja que solo la carga encerrada dentro del radio \( r \) contribuye al campo en ese punto (según la ley de Gauss). En cambio, fuera de la esfera (\( r > R \)), el campo disminuye con el cuadrado de la distancia, comportándose como si toda la carga estuviera concentrada en un punto en el centro de la esfera. Este resultado es consistente con el campo de un punto cargado, confirmando la simetría y naturaleza del campo eléctrico en distribuciones esféricas uniformes.
+La gráfica de \( |\mathbf{E}(r)| \) como función de la distancia desde el centro de una esfera cargada uniformemente muestra un comportamiento característico de los campos generados por distribuciones esféricas de carga. En el interior de la esfera (\( r < R \)), el campo eléctrico crece linealmente con la distancia al centro, lo que refleja que solo la carga encerrada dentro del radio \( r \) contribuye al campo en ese punto (según la ley de Gauss). En cambio, fuera de la esfera (\( r > R \)), el campo disminuye con el cuadrado de la distancia, comportándose como si toda la carga estuviera concentrada en un punto en el centro de la esfera. Este resultado es consistente con el campo de un punto cargado, confirmando la simetría y naturaleza del campo eléctrico en distribuciones esféricas uniformes.
 
 \section*{\question{Problema 2.10}}
 
-Una carga puntual \( q \) se encuentra en la esquina trasera de un cubo, como se muestra en la Figura \ref{fig:figura2.17}. Se desea encontrar el flujo del campo eléctrico \( \vec{E} \) a través de la cara sombreada del cubo.
+Una carga puntual \( q \) se encuentra en la esquina trasera de un cubo, como se muestra en la Figura \ref{fig:figura217}. Se desea encontrar el flujo del campo eléctrico \( \mathbf{E} \) a través de la cara sombreada del cubo.
 
 
 \begin{figure}[ht]
@@ -405,8 +405,8 @@ Una carga puntual \( q \) se encuentra en la esquina trasera de un cubo, como se
 
 \end{tikzpicture}
 \end{center}
-    \label{fig:figura2.17}
 \caption{Esquema de la carga ubicada la esquina del Cubo.}
+\label{fig:figura217}
 \end{figure}
 
 
@@ -444,7 +444,7 @@ Usamos la Ley de Gauss para encontrar el campo eléctrico dentro de una esfera c
 La Ley de Gauss establece:
 
 \[
-\oint \vec{E} \cdot d\vec{A} = \frac{q_{\text{int}}}{\varepsilon_0}
+\oint \mathbf{E} \cdot d\mathbf{A} = \frac{q_{\text{int}}}{\varepsilon_0}
 \]
 
 Por simetría, el campo eléctrico es radial y de magnitud constante sobre la superficie gaussiana. Entonces:
@@ -492,7 +492,7 @@ Encuentra el campo eléctrico dentro de una esfera que tiene una densidad de car
 
 \section*{Solución}
 
-Usando la Ley de Gauss \[\oint_S \vec{E} \cdot d\vec{a} = \frac{Q_{\text{enc}}}{\varepsilon_0}
+Usando la Ley de Gauss \[\oint_S \mathbf{E} \cdot d\vec{a} = \frac{Q_{\text{enc}}}{\varepsilon_0}
 \]
 \[
 \textbf{E}(4\pi r^2) = \frac{Q_{\text{enc}}}{\varepsilon_0}
@@ -521,14 +521,14 @@ Q_{\text{enc}} = \pi \kappa r^4
 \]
 Finalmente, reemplazando en la expresión del campo eléctrico
 \[
-\textbf{E}  
+\mathbf{E}  
 = \frac{Q_{\text{enc}}}{(4\pi r^2)\varepsilon_0} 
 = \frac{\pi \kappa r^4}{4\pi r^2 \varepsilon_0}
 = \frac{\kappa r^2}{4\varepsilon_0} \, \hat{r}
 \]
 
 \[
-\boxed{\textbf{E} = \frac{\kappa r^2}{4\varepsilon_0} \, \hat{r}}
+\boxed{\mathbf{E} = \frac{\kappa r^2}{4\varepsilon_0} \, \hat{r}}
 \]
 
 
@@ -554,18 +554,45 @@ Grafica \( |E| \) como función de \( s \).
 
 \section*{Solución}
 
-\subsection*{(i) Dentro del cilindro interior \((s < a)\),}
+\subsubsection*{(i) Dentro del cilindro interior \((s < a)\),}
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.75\linewidth]{imagenes/(i).png}
-    \caption{Superficie gaussiana \((s < a)\)}
-    \label{fig:26_1}
+\begin{figure}[H]
+    \begin{center}
+        \begin{tikzpicture}[scale=0.75]
+    % Outer cylinder (radius a)
+    \draw[thick] (0,0) ellipse (2 and 3);
+    \draw[thick] (0,0) ellipse (1 and 1.5);
+    \draw[thick] (0,3) -- (10,3);
+    \draw[thick] (0,1.5) -- (10,1.5);
+    \draw[thick] (0,-1.5) -- (10,-1.5);
+    \draw[thick] (0,-3) -- (10,-3);
+
+    \draw[dashed](-3,0) -- (11,0);
+    % cilindro de la parte interior 
+    \draw[thick,blue ,domain = 0:360,samples=100, variable=\t,line width=0.75mm] 
+    plot ({0.5*cos(\t)+4}, {0.75*sin(\t)});
+    
+    \draw[thick,blue,domain= 100:-100, samples=100, variable=\t,line width=0.75mm] 
+    plot ({0.5*cos(\t)+7}, {0.75*sin(\t)});
+
+    \draw[thick,line width=0.75mm,blue] (4,0.75) -- (7,0.75);
+    \draw[thick,line width=0.75mm,blue] (4,-0.75) -- (7,-0.75);
+
+\draw[|->] (4,-1) -- (7,-1) node[midway,below] {$l$};
+    \draw[|->,dash pattern=on 2pt off 0pt] (4,0) -- (4,0.75) node[near start,left] {$s$};
+    
+    \draw[|->,dash pattern=on 2pt off 0pt] (5,0) -- (5,1.5) node[near end,left] {$a$};
+
+    \draw[->,red] (7,0.75) .. controls (8,1.2) and (9,1.2) .. (11,0.75) node[below,font = \large] {Superficie Gausiana};
+\end{tikzpicture}
+    \end{center}
+    \caption*{Superficie gaussiana \((s < a)\)\label{fig:sample}}
 \end{figure}
+
 
 Aplicando la Ley de Gauss
 \[
-\oint_S \vec{E} \cdot d\vec{a} = \frac{Q_{\text{enc}}}{\varepsilon_0}
+\oint_S \mathbf{E} \cdot d\mathbf{a} = \frac{Q_{\text{enc}}}{\varepsilon_0}
 \]
 
 \[
@@ -586,7 +613,7 @@ Q_{\text{enc}} = \pi \rho s^2 \ell
 \]
 Finalmente, reemplazando en la expresión del campo eléctrico
 \[
-\textbf{E}= \frac{\pi \rho s^2 \ell}{ \varepsilon_0} \cdot \frac{1}{2\pi s \ell}
+\mathbf{E}= \frac{\pi \rho s^2 \ell}{ \varepsilon_0} \cdot \frac{1}{2\pi s \ell}
 \]
 
 \[
@@ -594,18 +621,42 @@ Finalmente, reemplazando en la expresión del campo eléctrico
 \textbf{E} =  \frac{\rho s}{2\varepsilon_0} \, \hat{s}
 }\]
 
-\subsection*{(ii) Campo eléctrico entre los cilindros \( a < s < b \)}
+\subsubsection*{(ii) Campo eléctrico entre los cilindros \( a < s < b \)}
 
-\begin{figure}[ht]
+
+
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\linewidth]{imagenes/(ii).png}
-    \caption*{Superficie gaussiana \( a < s < b \)}
-    \label{fig:enter-label}
+    \begin{tikzpicture}[scale = 0.75]
+    % Outer cylinder (radius a)
+    \draw[thick] (0,0) ellipse (2 and 3);
+    \draw[thick] (0,0) ellipse (1 and 1.5);
+    \draw[thick] (0,3) -- (10,3);
+    \draw[thick] (0,1.5) -- (10,1.5);
+    \draw[thick] (0,-1.5) -- (10,-1.5);
+    \draw[thick] (0,-3) -- (10,-3);
+
+    \draw[dashed](-3,0) -- (11,0);
+    % cilindro de la parte interior 
+    \draw[thick,blue, domain=130:-130, samples=100, variable=\t,line width=0.75mm] 
+    plot ({1*cos(\t)+4}, {2*sin(\t)});
+    
+    \draw[thick,blue, domain=130:-130, samples=100, variable=\t,line width=0.75mm] 
+    plot ({1*cos(\t)+7}, {2*sin(\t)});
+
+    \draw[thick,line width=0.75mm,blue] (4,2) -- (7,2);
+    \draw[thick,line width=0.75mm,blue] (4,-2) -- (7,-2);
+    \draw[|->] (4,-2.5) -- (7,-2.5) node[midway,below] {$l$};
+    \draw[|->,dash pattern=on 2pt off 0pt] (4,0) -- (4,2) node[midway,left] {$s$};
+
+    \draw[->,red] (7,2) .. controls (8,3) and (9,3) .. (12,2) node[below,font = \large] {Superficie Gausiana};
+\end{tikzpicture}
+    \caption*{Superficie gaussiana \( a < s < b \)\label{fig:sample2}}
 \end{figure}
 
 Aplicando la Ley de Gauss
 \[
-\oint_S \vec{E} \cdot d\vec{a} = \frac{Q_{\text{enc}}}{\varepsilon_0}
+\oint_S \mathbf{E} \cdot d\mathbf{a} = \frac{Q_{\text{enc}}}{\varepsilon_0}
 \]
 \[
 \textbf{E} (2\pi s \ell) = \frac{Q_{\text{enc}}}{\varepsilon_0}
@@ -634,17 +685,43 @@ Finalmente, reemplazando en la expresión del campo eléctrico
 \textbf{E} = \frac{\rho a^2}{2\varepsilon_0 s} \, \hat{s}
 }\]
 
-\subsection*{(iii) Fuera del cable \( s > b \)}
+\subsubsection*{(iii) Fuera del cable \( s > b \)}
 
-\begin{figure}[ht]
+
+
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\linewidth]{imagenes/(iii).png}
-    \caption*{Superficie gaussiana \(  s > b \)}
-    \label{fig:enter-label}
+    \begin{tikzpicture}[scale = 0.75]
+    % Outer cylinder (radius a)
+    \draw[thick] (0,0) ellipse (2 and 3);
+    \draw[thick] (0,0) ellipse (1 and 1.5);
+    \draw[thick] (0,3) -- (10,3);
+    \draw[thick] (0,1.5) -- (10,1.5);
+    \draw[thick] (0,-1.5) -- (10,-1.5);
+    \draw[thick] (0,-3) -- (10,-3);
+
+    
+    \draw[dashed](-3,0) -- (11,0);
+    % cilindro de la parte interior  
+    \draw[thick,blue, domain=120:-120, samples=100, variable=\t, line width=0.75mm] 
+      plot ({2*cos(\t)+4}, {3.5*sin(\t)});
+    
+    \draw[thick,blue, domain=120:-120, samples=100, variable=\t, line width=0.75mm] 
+      plot ({2*cos(\t)+7}, {3.5*sin(\t)});
+
+    \draw[thick,blue, line width=0.75mm] (4,3.5) -- (7,3.5);
+    \draw[thick,blue, line width=0.75mm] (4,-3.5) -- (7,-3.5);
+
+    \draw[|->] (4,-4) -- (7,-4) node[midway,below] {$l$};
+    \draw[|->,dash pattern=on 2pt off 0pt] (4,0) -- (4,3.5) node[midway,left] {$s$};
+
+    \draw[->,red] (7,3.5) .. controls (8,4) and (9,4) .. (12,3.5) node[below,font=\large] {Superficie Gausiana};
+\end{tikzpicture}
+    \caption*{Superficie gaussiana \(  s > b \)\label{fig:sample}}
 \end{figure}
 
 \[
-\oint_S \vec{E} \cdot d\vec{a} = \frac{Q_{\text{enc}}}{\varepsilon_0}
+\oint_S \mathbf{E} \cdot d\mathbf{a} = \frac{Q_{\text{enc}}}{\varepsilon_0}
 \]
 
 \[
@@ -684,7 +761,7 @@ El campo fuera del cable es nulo, ya que el sistema es neutro y la simetría ase
     \draw[dashed] (A) -- (\a,0) node[below] {$a$};
     \node[below] at (\b,0) {$b$};
   \end{tikzpicture}
-  \caption{Gráfica esquemática de \(|E|\) vs.\ \(s\).}
+  \caption{Gráfica esquemática de \(|\mathbf{E} |\) vs.\ \(s\).}
   \label{fig:EvsS}
 \end{figure}
 
@@ -836,7 +913,7 @@ Integrando a lo largo de la trayectoria \((0,0,0) \to (x,0,0) \to (x,y,0) \to (x
         \node[anchor=south] at (c) {$(x_0, y_0, z_0)$};
 
     \end{tikzpicture}
-    \caption*{Trayectoria $(x_0, y_0, z_0)$}
+    \caption{Trayectoria $(x_0, y_0, z_0)$}
 \end{figure}
 
 
@@ -938,7 +1015,7 @@ Además, dado que el sistema esta en coordenadas cilíndricas el campo eléctric
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{imagenes/problema_24.png}
-    \caption*{\label{fig:problema_24}Configuración del problema 2.16}
+    \caption{\label{fig:problema_24}Configuración del problema 2.16}
 \end{figure}
 
 
