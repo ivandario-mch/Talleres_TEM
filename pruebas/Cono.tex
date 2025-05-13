@@ -1,0 +1,85 @@
+% Archivo LaTeX en formato artículo con TikZ para un elemento diferencial de área en coordenadas esféricas
+\documentclass[12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usepackage{amsmath}
+
+\title{Elemento diferencial de área en coordenadas esféricas para un cono hueco}
+\author{Autor}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+En este artículo se presenta un diagrama en TikZ que ilustra el elemento diferencial de área \(dA\) en coordenadas esféricas sobre la superficie de un cono hueco. Se demuestra visualmente que:
+\[
+dA = r\sin\theta\,dr\,d\phi.
+\]
+\end{abstract}
+
+\section{Introducción}
+Las coordenadas esféricas \((r,\theta,\phi)\) son útiles para describir superficies curvas. En particular, el área diferencial en una superficie fija de coordenadas esféricas viene dado por el producto de los incrementos lineales en las direcciones de \(r\) y de \(\phi\) escalado por \(r\sin\theta\).
+
+\section{Diagrama del cono hueco}
+A continuación se muestra un gráfico en 3D del cono hueco y el parche diferencial de área.
+
+\begin{figure}[h!]
+  \centering
+  \tdplotsetmaincoords{60}{110}
+  \begin{tikzpicture}[tdplot_main_coords, scale=3]
+    % Parámetros del cono
+    \def\thetaval{30}   % ángulo polar θ
+    \def\rval{1}        % radio base del cono
+
+    % Ejes cartesianos
+    \draw[->] (0,0,0) -- (1.3,0,0) node[anchor=north east]{$x$};
+    \draw[->] (0,0,0) -- (0,1.3,0) node[anchor=north west]{$y$};
+    \draw[->] (0,0,0) -- (0,0,1.3) node[anchor=south]{$z$};
+
+    % Superficie del cono hueco
+    \tdplotdrawparametricsurface[
+      fill=blue!10, draw=blue, opacity=0.5
+    ]{\thetaval}{\thetaval+0.01}{0}{360}{1}{
+      {sin(\thetaval)*cos(\x)},
+      {sin(\thetaval)*sin(\x)},
+      {cos(\thetaval)}
+    }
+
+    % Punto P sobre la superficie
+    \tdplotsetcoord{P}{\rval}{\thetaval}{45}
+
+    % Coordenadas incrementales dr y dφ
+    \tdplotsetcoord{Pdr}{\rval+0.15}{\thetaval}{45}
+    \tdplotsetcoord{Pdphi}{\rval}{\thetaval+3}{45}
+
+    % Vectores dr y r sinθ dφ
+    \draw[red,thick,->] (P) -- (Pdr) node[midway,right]{$dr$};
+    \draw[red,thick,->] (P) -- (Pdphi) node[midway,above]{$r\sin\theta\,d\phi$};
+
+    % Etiqueta del parche diferencial
+    \node at (0.7,0.7,0.7) {$dA = r\sin\theta\,dr\,d\phi$};
+
+    % Ángulo θ en el origen
+    \tdplotdrawarc[
+      dashed,
+      ->,
+      arc angle start=0,
+      arc angle end=\thetaval,
+      radius=0.5
+    ]{(0,0,0)}{(1,0,0)}{(0,0,1)} node[midway,right]{$\theta$};
+
+    % Etiqueta r en el eje x
+    \node at (1.1,0,0) {$r$};
+
+  \end{tikzpicture}
+  \caption{Cono hueco con elemento diferencial de área en coordenadas esféricas.}
+  \label{fig:cono_hueco}
+\end{figure}
+
+\section{Conclusión}
+El diagrama confirma que el elemento diferencial de área sobre la superficie de un cono hueco en coordenadas esféricas viene dado por \(dA = r\sin\theta\,dr\,d\phi\).
+
+\end{document}

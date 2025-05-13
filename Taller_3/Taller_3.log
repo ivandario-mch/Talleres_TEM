@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.24)  1 MAY 2025 21:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.24)  1 MAY 2025 21:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -603,7 +603,7 @@ File: l3backend-pdftex.def 2025-03-14 L3 backend support: PDF output (pdfTeX)
 )
 (Taller_3.aux (portada.aux)
 
-LaTeX Warning: Label `fig:enter-label' multiply defined.
+LaTeX Warning: Label `fig:sample' multiply defined.
 
 )
 \openout1 = `Taller_3.aux'.
@@ -713,9 +713,6 @@ Package pdftex.def Info: imagenes/eje2.2 (1).jpg  used on input line 44.
 
 
  <./imagenes/eje2.2 (1).jpg>]
-
-LaTeX Warning: Reference `figura2' on page 2 undefined on input line 108.
-
 <imagenes/eje2.4.png, id=18, 466.74374pt x 447.17062pt>
 File: imagenes/eje2.4.png Graphic file (type png)
 <use imagenes/eje2.4.png>
@@ -736,11 +733,6 @@ Package pdftex.def Info: imagenes/eje2.6.jpg  used on input line 161.
 [4 <./imagenes/eje2.6.jpg>]
 
 [5]
-
-LaTeX Warning: Reference `fig:figura217' on page 6 undefined on input line 385.
-
-
-
 
 [6]
 
@@ -797,17 +789,14 @@ L3 programming layer <2025-03-26>
  ***********
 
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 27882 strings out of 469959
- 699474 string characters out of 5479904
- 1254323 words of memory out of 5000000
- 54259 multiletter control sequences out of 15000+600000
+ 27878 strings out of 469959
+ 699421 string characters out of 5479904
+ 1254245 words of memory out of 5000000
+ 54255 multiletter control sequences out of 15000+600000
  636875 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,20n,101p,854b,2242s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -822,7 +811,7 @@ TeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type
 1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti
 12.pfb>
-Output written on Taller_3.pdf (19 pages, 740333 bytes).
+Output written on Taller_3.pdf (19 pages, 739966 bytes).
 PDF statistics:
  140 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
