@@ -1,0 +1,292 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage[a4paper, margin=2.54cm]{geometry}
+\usepackage{enumerate}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{pgfplots}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{tikz-3dplot} % Permite coordenadas 3D
+% Definir un comando para el número de pregunta en azul
+\newcommand{\question}[1]{\textcolor{blue}{\textbf{#1}}}
+%\usepackage[spanish]{babel}
+\setlength{\headheight}{14.5pt} % Ajustar la altura del encabezado
+\usetikzlibrary{3d}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Taller No. 5-Teoría Electromagnética}
+\fancyfoot[R]{ \thepage}
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+
+\begin{document}
+\include{portada}
+
+\section*{\question{Problema 3.22}}
+En el Problema 2.25, encontraste el potencial sobre el eje de un disco uniformemente cargado: 
+\[ V(r,\theta) = \frac{\sigma}{2\epsilon_o}(\sqrt{r^2 + R^2}-r)\]
+\begin{enumerate}[label=(\alph*)]
+  \item   Usa esto, junto con el hecho de que \(P_l(1) = 1\) para evaluar los tres primeros términos en la expansión (Ecuación 3.72) para el potencial del disco en puntos fuera del eje, suponiendo que \(r > R\).
+
+  \item  Encuentra el potencial para \(r < R\) usando el mismo método, empleando la Ecuación 3.66. [Nota: debes dividir la región interior en dos hemisferios, por arriba y por debajo del disco. No asumas que los coeficientes \(A_l\) son los mismos en ambos hemisferios.]
+\end{enumerate}
+
+\subsection*{Solución}
+En el Problema 2.25, el potencial sobre el eje de un disco uniformemente cargado de radio \(R\):
+\[
+V(r,0) \;=\; \frac{\sigma}{2\varepsilon_{0}}\bigl(\sqrt{r^{2} + R^{2}} - r \bigr).
+\]
+
+
+\subsection*{(a) Expansión para \(\boldsymbol{r>R}\)}
+
+Para puntos fuera del disco (\(r>R\)), sabemos que el potencial puede expresarse en una serie de armónicos esféricos (armónicos exteriores):
+\[
+V(r,\theta)
+\;=\;
+\sum_{l=0}^{\infty} B_{l}\,\frac{P_{l}(\cos\theta)}{r^{\,l+1}}.
+\]
+En particular, en el eje \(\theta=0\), como \(P_{l}(1)=1\), se tiene
+\[
+V(r,0)
+\;=\;
+\sum_{l=0}^{\infty} \frac{B_{l}}{r^{\,l+1}}.
+\]
+
+Por otro lado, para \(r>R\) la expresión dada en el enunciado es
+\[
+V(r,0) \;=\; \frac{\sigma}{2\varepsilon_{0}} \Bigl(\sqrt{r^{2}+R^{2}} - r\Bigr).
+\]
+Expandiendo \(\sqrt{r^{2}+R^{2}} - r\) en potencias de \(R/r\) cuando \(r>R\):
+\begin{align*}
+\sqrt{r^{2}+R^{2}} 
+&= r\,\sqrt{1 + \frac{R^{2}}{r^{2}}}
+= r \Bigl( 1 + \tfrac{1}{2}\,\frac{R^{2}}{r^{2}} - \tfrac{1}{8}\,\frac{R^{4}}{r^{4}} 
+      + \tfrac{1}{16}\,\frac{R^{6}}{r^{6}} + \cdots \Bigr), \\
+%
+\sqrt{r^{2}+R^{2}} - r 
+&= r\Bigl(1 + \tfrac{1}{2}\frac{R^{2}}{r^{2}} - \tfrac{1}{8}\frac{R^{4}}{r^{4}} 
+          + \tfrac{1}{16}\frac{R^{6}}{r^{6}} + \cdots - 1\Bigr) \\
+&= \frac{R^{2}}{2r} 
+   \;-\; \frac{R^{4}}{8\,r^{3}} 
+   \;+\; \frac{R^{6}}{16\,r^{5}} 
+   \;-\; \cdots.
+\end{align*}
+Por tanto,
+\[
+V(r,0) 
+= \frac{\sigma}{2\varepsilon_{0}} 
+  \left(\tfrac{R^{2}}{2r} - \tfrac{R^{4}}{8\,r^{3}} + \tfrac{R^{6}}{16\,r^{5}} - \cdots \right)
+= \frac{\sigma R^{2}}{4\varepsilon_{0}}\,\frac{1}{r} 
+  \;-\; \frac{\sigma R^{4}}{16\varepsilon_{0}}\,\frac{1}{r^{3}} 
+  \;+\; \frac{\sigma R^{6}}{32\varepsilon_{0}}\,\frac{1}{r^{5}} 
+  \;-\; \cdots.
+\]
+Comparando este desarrollo con
+\(\displaystyle
+V(r,0)=\sum_{l=0}^{\infty} \frac{B_{l}}{r^{\,l+1}},
+\)
+Tenemos que los tres primeros coeficientes no nulos \(B_{l}\) son:
+\[
+\begin{aligned}
+B_{0} &= \frac{\sigma\,R^{2}}{4\,\varepsilon_{0}}, \\[6pt]
+B_{2} &= -\,\frac{\sigma\,R^{4}}{16\,\varepsilon_{0}}, \\[6pt]
+B_{4} &= \frac{\sigma\,R^{6}}{32\,\varepsilon_{0}}\,.
+\end{aligned}
+\]
+
+Así, la aproximación con los tres primeros términos para \(r>R\) queda:
+\[
+V(r,\theta)
+\approx
+\frac{\sigma\,R^{2}}{4\,\varepsilon_{0}}\,\frac{P_{0}(\cos\theta)}{r}
+\;-\;
+\frac{\sigma\,R^{4}}{16\,\varepsilon_{0}}\,\frac{P_{2}(\cos\theta)}{r^{3}}
+\;+\;
+\frac{\sigma\,R^{6}}{32\,\varepsilon_{0}}\,\frac{P_{4}(\cos\theta)}{r^{5}}.
+\]
+
+\[
+V(r,\theta)\approx
+\frac{\sigma\,R^{2}}{4\,\varepsilon_{0}}\;\frac{1}{r}
+\;-\;
+\frac{\sigma\,R^{4}}{16\,\varepsilon_{0}}\;\frac{\displaystyle \frac{1}{2}\bigl(3\cos^{2}\theta - 1\bigr)}{r^{3}}
+\;+\;
+\frac{\sigma\,R^{6}}{32\,\varepsilon_{0}}\;\frac{\displaystyle \frac{1}{8}\bigl(35\cos^{4}\theta - 30\cos^{2}\theta + 3\bigr)}{r^{5}}\,.
+\]
+
+\[
+V(r,\theta)\approx
+\frac{\sigma\,R^{2}}{4\,\varepsilon_{0}\,r} \left( 
+1 \;-\;
+\frac{R^{2}}{4}\,\frac{\displaystyle \frac{1}{2}\bigl(3\cos^{2}\theta - 1\bigr)}{r^{2}}
+\;+\;
+\frac{R^{4}}{8\,}\;\frac{\displaystyle \frac{1}{8}\bigl(35\cos^{4}\theta - 30\cos^{2}\theta + 3\bigr)}{r^{4}}\,.
+\right)\]
+\bigskip
+
+\subsection*{(b) Expansión para \(\boldsymbol{r<R}\)}
+
+Para puntos dentro del disco (\(r<R\)) utilizamos la expansión en armónicos regulares (armónicos interiores):
+\[
+V(r,\theta)
+\;=\;
+\sum_{l=0}^{\infty} A_{l}\,r^{\,l}\,P_{l}(\cos\theta).
+\]
+De nuevo, en el eje \(\theta=0\) se tiene \(P_{l}(1) = 1\), luego
+\[
+V(r,0) \;=\; \sum_{l=0}^{\infty} A_{l}\,r^{\,l}.
+\]
+Pero sabemos también que el valor en el eje (\(\theta=0\)) para \(r<R\) sigue siendo
+\[
+V(r,0) 
+= \frac{\sigma}{2\varepsilon_{0}}\,\bigl(\sqrt{r^{2}+R^{2}} - r\bigr).
+\]
+Ahora, desarrollando \(\sqrt{r^{2}+R^{2}} - r\) en potencias de \(r/R\) cuando \(r<R\):
+\begin{align*}
+\sqrt{r^{2} + R^{2}}
+&= R\,\sqrt{1 + \frac{r^{2}}{R^{2}}}
+= R \Bigl( 1 + \frac{1}{2}\,\frac{r^{2}}{R^{2}} - \frac{1}{8}\,\frac{r^{4}}{R^{4}} 
+      + \frac{1}{16}\,\frac{r^{6}}{R^{6}} + \cdots \Bigr),\\
+%
+\sqrt{r^{2} + R^{2}} - r
+&= R - r + \frac{r^{2}}{2\,R} - \frac{r^{4}}{8\,R^{3}} + \cdots.
+\end{align*}
+Por tanto,
+\[
+V(r,0)
+= \frac{\sigma}{2\varepsilon_{0}} 
+  \Bigl(R - r + \tfrac{r^{2}}{2R} - \tfrac{r^{4}}{8R^{3}} + \cdots \Bigr).
+\]
+Agrupando por potencias de \(r\):
+\[
+V(r,0)
+= \underbrace{\frac{\sigma\,R}{2\varepsilon_{0}}}_{A_{0}} 
+  \;-\; \underbrace{\frac{\sigma}{2\varepsilon_{0}}}_{A_{1}}\,r 
+  \;+\; \underbrace{\frac{\sigma}{4\,\varepsilon_{0}\,R}}_{A_{2}}\,r^{2} 
+  \;+\; \cdots.
+\]
+De aquí leemos los primeros coeficientes \(B_{l}\):
+\[
+\begin{aligned}
+A_{0} &= \frac{\sigma\,R}{2\,\varepsilon_{0}}, \\[6pt]
+A_{1} &= -\frac{\sigma}{2\,\varepsilon_{0}}, \\[6pt]
+A_{2} &= \frac{\sigma}{4\,\varepsilon_{0}\,R}, \\[6pt]
+&\;\;\vdots
+\end{aligned}
+\]
+Por lo tanto, la aproximación con los primeros términos (hasta \(r^{2}P_{2}\)) para \(r<R\) para el hemisferio norte \(V(r,\theta)\), donde \(0 \le\theta\le\pi/2\)  es:
+\[
+V(r,\theta)
+\approx
+\frac{\sigma\,R}{2\,\varepsilon_{0}}\,P_{0}(\cos\theta)
+\;-\; \frac{\sigma}{2\,\varepsilon_{0}}\,r\,P_{1}(\cos\theta)
+\;+\; \frac{\sigma}{4\,\varepsilon_{0}\,R}\,r^{2}\,P_{2}(\cos\theta)
+\]
+\[
+V(r,\theta)\approx
+\frac{\sigma\,R}{2\,\varepsilon_{0}}
+\;-\;
+\frac{\sigma\,r\,\cos\theta}{2\,\varepsilon_{0}}
+\;+\;
+\frac{\sigma\,r^{2}}{8\,\varepsilon_{0}\,R}\,\bigl(3\cos^{2}\theta - 1\bigr)\,.
+\]
+
+\[
+V(r,\theta)\approx
+\frac{\sigma\,R}{2\,\varepsilon_{0}}\left (1
+\;-\;
+\frac{r\,\cos\theta}{R}
+\;+\;
+\frac{r^{2}}{4\,R^2}\,\bigl(3\cos^{2}\theta - 1\bigr)\,\right).
+\]
+Ahora, para el hemisferio sur (\(\theta=\pi\)), tenemos en cuenta que \(P_{l}(-1) = (-1)^{l}\), por lo que los coeficientes \(A_{l}\) son los mismos, pero con signo alternante: 
+\[ V(r,\pi) = \sum_{l=0}^{\infty} (-1)^l A_l'r^l = \frac{\sigma}{2 \epsilon_o} \left( \sqrt{r^2 + R^2} -r\right)\]
+
+Donde los coeficientes \(A_l'\) son:
+\[
+\begin{aligned}
+A_{0}' &= \frac{\sigma\,R}{2\,\varepsilon_{0}}, \\[6pt]
+A_{1}' &= \frac{\sigma}{2\,\varepsilon_{0}}, \\[6pt]
+A_{2}' &= \frac{\sigma}{4\,\varepsilon_{0}\,R}, \\[6pt]
+&\;\;\vdots
+\end{aligned}
+\]
+Por lo tanto la aproximación con los primeros términos (hasta \(r^{2}P_{2}\)) para \(r<R\) para el hemisferio sur es:
+\[
+V(r,\theta) \approx \frac{\sigma\,R}{2\,\varepsilon_{0}} P_{0}(\cos\theta) + \frac{\sigma}{2\,\varepsilon_{0}} r P_{1}(\cos\theta) + \frac{\sigma}{4\,\varepsilon_{0}\,R} r^{2} P_{2}(\cos\theta)\]
+\[
+V(r,\theta)\approx
+\frac{\sigma\,R}{2\,\varepsilon_{0}}\left (1
+\;+\;
+\frac{r\,\cos\theta}{R}
+\;+\;
+\frac{r^{2}}{4\,R^2}\,\bigl(3\cos^{2}\theta - 1\bigr)\,\right).
+\]
+\section*{\question{Problema 3.24}}
+Resuelve la ecuación de Laplace mediante separación de variables en coordenadas cilíndricas, asumiendo que no hay dependencia con respecto a z (simetría cilíndrica).
+
+\subsection*{Solución}
+
+La ecuación de Laplace en coordenadas cilíndricas $(\rho, \varphi, z)$, asumiendo que no hay dependencia con respecto a $z$ (simetría axial), se reduce a:
+
+$$ \nabla^2 \Phi = \frac{1}{\rho} \frac{\partial}{\partial \rho} \left( \rho \frac{\partial \Phi}{\partial \rho} \right) + \frac{1}{\rho^2} \frac{\partial^2 \Phi}{\partial \varphi^2} = 0 $$
+
+Proponemos una solución mediante separación de variables, de la forma $\Phi(\rho, \varphi) = S(\rho) F(\varphi)$. Sustituyendo esta forma en la ecuación de Laplace:
+
+$$ \frac{F(\varphi)}{\rho} \frac{d}{d \rho} \left( \rho \frac{d S}{d \rho} \right) + \frac{S(\rho)}{\rho^2} \frac{d^2 F}{d \varphi^2} = 0 $$
+
+Multiplicamos por $\frac{\rho^2}{S(\rho)F(\varphi)}$ para separar las variables:
+
+$$ \frac{\rho}{S(\rho)} \frac{d}{d \rho} \left( \rho \frac{d S}{d \rho} \right) + \frac{1}{F(\varphi)} \frac{d^2 F}{d \varphi^2} = 0 $$
+
+Esto nos lleva a dos ecuaciones diferenciales ordinarias, igualando cada parte a una constante de separación $k^2$
+$$ \frac{\rho}{S(\rho)} \frac{d}{d \rho} \left( \rho \frac{d S}{d \rho} \right) = k^2 $$
+$$ \frac{1}{F(\varphi)} \frac{d^2 F}{d \varphi^2} = -k^2 $$
+
+\subsection*{i) Ecuación angular}
+$$ \frac{d^2 F}{d \varphi^2} + k^2 F(\varphi) = 0 $$
+La solución general para esta ecuación es:
+$$ F(\varphi) = A_k \cos(k\varphi) + B_k \sin(k\varphi) $$
+
+\subsection*{ii) Ecuación radial}
+$$ \frac{\rho}{S(\rho)} \frac{d}{d \rho} \left( \rho \frac{d S}{d \rho} \right) = k^2 $$
+$$ \rho \frac{d}{d \rho} \left( \rho \frac{d S}{d \rho} \right) - k^2 S(\rho) = 0 $$
+Expandiendo el término de la derivada:
+$$ \rho \left( \frac{dS}{d\rho} + \rho \frac{d^2S}{d\rho^2} \right) - k^2 S = 0 $$
+$$ \rho^2 \frac{d^2S}{d\rho^2} + \rho \frac{dS}{d\rho} - k^2 S = 0 $$
+Esta es la ecuación de Euler-Cauchy.
+
+\subsection*{Caso 1: $k \neq 0$}
+La solucion es de la forma $S(\rho) = \rho^m$. 
+$$ \rho^2 m(m-1)\rho^{m-2} + \rho m\rho^{m-1} - k^2 \rho^m = 0 $$
+$$ m(m-1) + m - k^2 = 0 $$
+$$ m^2 - m + m - k^2 = 0 $$
+$$ m^2 = k^2 \implies m = \pm k $$
+Por lo tanto, la solución general para $S(\rho)$ cuando $k \neq 0$ (y $k$ es un entero $n \neq 0$) es:
+$$ S_n(\rho) = C_n \rho^n + D_n \rho^{-n} $$
+
+\subsection*{Caso 2: $k = 0$}
+La ecuación radial se simplifica a:
+$$ \rho \frac{d}{d \rho} \left( \rho \frac{d S}{d \rho} \right) = 0 $$
+Dividiendo por $\rho$ (asumiendo $\rho \neq 0$):
+$$ \frac{d}{d \rho} \left( \rho \frac{d S}{d \rho} \right) = 0 $$
+Integrando una vez:
+$$ \rho \frac{d S}{d \rho} = C_1 $$
+$$ \frac{d S}{d \rho} = \frac{C_1}{\rho} $$
+Integrando de nuevo:
+$$ S_0(\rho) = C_1 \ln(\rho) + C_2 $$
+Esta solución logarítmica es la que corresponde al potencial de una línea de carga infinita.
+
+\section*{Solución General}
+
+La solución general $\Phi(\rho, \varphi)$ es la superposición de todas las soluciones. 
+$$ V(\rho, \varphi) = a_0 + b_0 \ln(\rho) + \sum_{k=1}^{\infty} \left[ (a_k \rho^k + b_k \rho^{-k})\cos(k\varphi) + (c_k \rho^k + d_k \rho^{-k})\sin(k\varphi) \right] $$
+
+\end{document}
